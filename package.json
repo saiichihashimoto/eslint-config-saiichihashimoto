@@ -1,0 +1,32 @@
+{
+  "name": "eslint-config-saiichihashimoto",
+  "version": "0.0.0-development",
+  "homepage": "https://github.com/saiichihashimoto/eslint-config-saiichihashimoto#readme",
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/eslint-config-saiichihashimoto/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiichihashimoto/eslint-config-saiichihashimoto.git"
+  },
+  "main": ".eslintrc.js",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "babel-eslint": "10.0.1",
+    "cross-env": "5.2.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-import": "2.15.0",
+    "eslint-plugin-jsx-a11y": "6.2.0",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-you-dont-need-lodash-underscore": "6.4.0",
+    "eslint-plugin-you-dont-need-momentjs": "1.4.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
+  }
+}
