@@ -10,13 +10,10 @@
     "url": "git+https://github.com/saiichihashimoto/eslint-config-saiichihashimoto.git"
   },
   "main": ".eslintrc.js",
-  "scripts": {
-    "test": "run-s test:*",
-    "test:lint": "lint-my-app"
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged-my-app"
+      "pre-commit": "lint-staged-my-app",
+      "pre-push": "lint-my-app"
     }
   },
   "config": {
@@ -38,8 +35,7 @@
     "cz-conventional-changelog": "2.1.0",
     "eslint": "5.13.0",
     "husky": "1.3.1",
-    "lint-my-app": "2.0.0",
-    "npm-run-all": "4.1.5"
+    "lint-my-app": "2.0.0"
   },
   "peerDependencies": {
     "eslint": ">=5.12.1"
