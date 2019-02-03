@@ -1,17 +1,6 @@
 /* eslint key-spacing: ['error', { beforeColon: false, afterColon: true }] */
 
 module.exports = {
-	plugins: [
-		'css-modules',
-		'import',
-		'you-dont-need-lodash-underscore',
-	],
-	extends: [
-		'airbnb',
-		'plugin:css-modules/recommended',
-		'plugin:you-dont-need-lodash-underscore/all',
-		'plugin:you-dont-need-momentjs/recommended',
-	],
 	parser: 'babel-eslint',
 	parserOptions: {
 		ecmaFeatures: {
@@ -27,6 +16,17 @@ module.exports = {
 		es6: true,
 		node: true,
 	},
+	plugins: [
+		'css-modules',
+		'import',
+		'you-dont-need-lodash-underscore',
+	],
+	extends: [
+		'airbnb',
+		'plugin:css-modules/recommended',
+		'plugin:you-dont-need-lodash-underscore/all',
+		'plugin:you-dont-need-momentjs/recommended',
+	],
 	rules: {
 		'import/exports-last': 'error',
 		'import/first': [
