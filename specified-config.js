@@ -44,16 +44,7 @@ module.exports = {
 			'error',
 			'after-props',
 		],
-		'react/jsx-filename-extension': [
-			'error',
-			{
-				extensions: [
-					'.spec.js',
-					'.test.js',
-					'.web.js',
-				],
-			},
-		],
+		'react/jsx-filename-extension': 'off',
 		'react/jsx-handler-names': 'error',
 		'react/jsx-indent': [
 			'error',
