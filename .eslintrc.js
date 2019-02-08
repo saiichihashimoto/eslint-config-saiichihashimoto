@@ -5,6 +5,7 @@ module.exports = {
 	extends: [
 		'airbnb',
 		'plugin:css-modules/recommended',
+		'plugin:jest/recommended',
 		'plugin:you-dont-need-lodash-underscore/all',
 		'plugin:you-dont-need-momentjs/recommended',
 	],
