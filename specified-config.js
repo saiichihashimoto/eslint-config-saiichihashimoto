@@ -20,6 +20,7 @@ module.exports = {
 		'css-modules',
 		'import',
 		'node',
+		'promise',
 		'you-dont-need-lodash-underscore',
 	],
 	rules: {
@@ -43,6 +44,8 @@ module.exports = {
 
 		'node/no-deprecated-api': 'error',
 		'node/process-exit-as-throw': 'error',
+
+		'promise/valid-params': 'error',
 
 		'react/jsx-closing-bracket-location': [
 			'error',

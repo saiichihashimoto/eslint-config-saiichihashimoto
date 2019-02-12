@@ -6,6 +6,7 @@ module.exports = {
 		'airbnb',
 		'plugin:css-modules/recommended',
 		'plugin:jest/recommended',
+		'plugin:promise/recommended',
 		'plugin:you-dont-need-lodash-underscore/all',
 		'plugin:you-dont-need-momentjs/recommended',
 	],
