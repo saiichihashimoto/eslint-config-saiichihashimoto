@@ -19,6 +19,7 @@ module.exports = {
 	plugins: [
 		'css-modules',
 		'import',
+		'node',
 		'you-dont-need-lodash-underscore',
 	],
 	rules: {
@@ -39,6 +40,9 @@ module.exports = {
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/no-noninteractive-element-interactions': 'off',
 		'jsx-a11y/no-static-element-interactions': 'off',
+
+		'node/no-deprecated-api': 'error',
+		'node/process-exit-as-throw': 'error',
 
 		'react/jsx-closing-bracket-location': [
 			'error',
