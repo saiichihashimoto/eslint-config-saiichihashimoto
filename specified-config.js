@@ -206,6 +206,9 @@ module.exports = {
 			env: {
 				jest: true,
 			},
+			rules: {
+				'jest/prefer-called-with': 'error',
+			},
 		},
 		{
 			files: [
