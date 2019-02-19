@@ -19,9 +19,12 @@ module.exports = {
 	plugins: [
 		'css-modules',
 		'import',
+		'jsx-a11y',
 		'node',
 		'promise',
+		'react',
 		'you-dont-need-lodash-underscore',
+		'you-dont-need-momentjs',
 	],
 	rules: {
 		'import/exports-last': 'error',
@@ -45,6 +48,8 @@ module.exports = {
 		'node/no-deprecated-api': 'error',
 		'node/process-exit-as-throw': 'error',
 
+		'promise/prefer-await-to-callbacks': 'error',
+		'promise/prefer-await-to-then': 'error',
 		'promise/valid-params': 'error',
 
 		'react/jsx-closing-bracket-location': [
@@ -206,6 +211,9 @@ module.exports = {
 			env: {
 				jest: true,
 			},
+			plugins: [
+				'jest',
+			],
 			rules: {
 				'jest/prefer-called-with': 'error',
 			},
