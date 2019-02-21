@@ -23,6 +23,7 @@ module.exports = {
 		'node',
 		'promise',
 		'react',
+		'react-hooks',
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
@@ -98,6 +99,8 @@ module.exports = {
 		],
 		'react/prefer-stateless-function': ['error', { ignorePureComponents: false }],
 		'react/prop-types': 'off',
+
+		'react-hooks/rules-of-hooks': 'error',
 
 		'arrow-parens': [
 			'error',
