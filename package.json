@@ -25,9 +25,6 @@
   },
   "license": "MIT",
   "main": ".eslintrc.js",
-  "scripts": {
-    "test": "eslint-find-rules specified-config.js --deprecated --verbose"
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -50,7 +47,6 @@
   "devDependencies": {
     "cz-conventional-changelog": "2.1.0",
     "eslint": "6.0.0",
-    "eslint-find-rules": "3.3.1",
     "husky": "2.4.1",
     "lint-my-app": "3.3.29",
     "react": "16.8.6"
