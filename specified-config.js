@@ -7,14 +7,23 @@ module.exports = {
 			jsx: true,
 		},
 	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
+	},
 	env: {
 		es6: true,
 		node: true,
 	},
 	plugins: [
+		'css-modules',
 		'import',
+		'jsx-a11y',
 		'node',
 		'promise',
+		'react',
+		'react-hooks',
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
@@ -31,12 +40,68 @@ module.exports = {
 		'import/order': 'error',
 		'import/prefer-default-export': 'off',
 
+		'jsx-a11y/anchor-has-content': 'off',
+		'jsx-a11y/anchor-is-valid': 'off',
+		'jsx-a11y/click-events-have-key-events': 'off',
+		'jsx-a11y/no-autofocus': 'off',
+		'jsx-a11y/no-noninteractive-element-interactions': 'off',
+		'jsx-a11y/no-static-element-interactions': 'off',
+
 		'node/no-deprecated-api': 'error',
 		'node/process-exit-as-throw': 'error',
 
 		'promise/prefer-await-to-callbacks': 'error',
 		'promise/prefer-await-to-then': 'error',
 		'promise/valid-params': 'error',
+
+		'react/jsx-closing-bracket-location': [
+			'error',
+			'after-props',
+		],
+		'react/jsx-filename-extension': 'off',
+		'react/jsx-handler-names': 'error',
+		'react/jsx-indent': [
+			'error',
+			'tab',
+		],
+		'react/jsx-indent-props': [
+			'error',
+			'tab',
+		],
+		'react/jsx-key': 'error',
+		'react/jsx-no-bind': 'error',
+		'react/jsx-one-expression-per-line': 'off',
+		'react/jsx-sort-props': [
+			'error',
+			{
+				callbacksLast: true,
+				noSortAlphabetically: true,
+				reservedFirst: true,
+				shorthandFirst: true,
+			},
+		],
+		'react/destructuring-assignment': [
+			'error',
+			'always',
+			{
+				ignoreClassFields: true,
+			},
+		],
+		'react/no-direct-mutation-state': 'error',
+		'react/no-multi-comp': 'off',
+		'react/no-unescaped-entities': [
+			'error',
+			{
+				forbid: [
+					'>',
+					'}',
+				],
+			},
+		],
+		'react/prefer-stateless-function': ['error', { ignorePureComponents: false }],
+		'react/prop-types': 'off',
+
+		'react-hooks/rules-of-hooks': 'error',
 
 		'arrow-parens': [
 			'error',
@@ -172,20 +237,11 @@ module.exports = {
 						],
 					},
 				},
-				'react': {
-					version: 'detect',
-				},
 			},
 			env: {
 				browser: true,
 				commonjs: true,
 			},
-			plugins: [
-				'css-modules',
-				'jsx-a11y',
-				'react',
-				'react-hooks',
-			],
 			rules: {
 				'import/no-extraneous-dependencies': [
 					'error',
@@ -194,62 +250,6 @@ module.exports = {
 						optionalDependencies: false,
 					},
 				],
-
-				'jsx-a11y/anchor-has-content': 'off',
-				'jsx-a11y/anchor-is-valid': 'off',
-				'jsx-a11y/click-events-have-key-events': 'off',
-				'jsx-a11y/no-autofocus': 'off',
-				'jsx-a11y/no-noninteractive-element-interactions': 'off',
-				'jsx-a11y/no-static-element-interactions': 'off',
-
-				'react/jsx-closing-bracket-location': [
-					'error',
-					'after-props',
-				],
-				'react/jsx-filename-extension': 'off',
-				'react/jsx-handler-names': 'error',
-				'react/jsx-indent': [
-					'error',
-					'tab',
-				],
-				'react/jsx-indent-props': [
-					'error',
-					'tab',
-				],
-				'react/jsx-key': 'error',
-				'react/jsx-no-bind': 'error',
-				'react/jsx-one-expression-per-line': 'off',
-				'react/jsx-sort-props': [
-					'error',
-					{
-						callbacksLast: true,
-						noSortAlphabetically: true,
-						reservedFirst: true,
-						shorthandFirst: true,
-					},
-				],
-				'react/destructuring-assignment': [
-					'error',
-					'always',
-					{
-						ignoreClassFields: true,
-					},
-				],
-				'react/no-direct-mutation-state': 'error',
-				'react/no-multi-comp': 'off',
-				'react/no-unescaped-entities': [
-					'error',
-					{
-						forbid: [
-							'>',
-							'}',
-						],
-					},
-				],
-				'react/prefer-stateless-function': ['error', { ignorePureComponents: false }],
-				'react/prop-types': 'off',
-
-				'react-hooks/rules-of-hooks': 'error',
 			},
 		},
 	],
