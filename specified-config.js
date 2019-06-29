@@ -242,15 +242,6 @@ module.exports = {
 				browser: true,
 				commonjs: true,
 			},
-			rules: {
-				'import/no-extraneous-dependencies': [
-					'error',
-					{
-						devDependencies: true,
-						optionalDependencies: false,
-					},
-				],
-			},
 		},
 	],
 };
