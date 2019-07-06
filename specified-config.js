@@ -24,6 +24,7 @@ module.exports = {
 		'promise',
 		'react',
 		'react-hooks',
+		'unicorn',
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
@@ -102,6 +103,8 @@ module.exports = {
 		'react/prop-types': 'off',
 
 		'react-hooks/rules-of-hooks': 'error',
+
+		'unicorn/prevent-abbreviations': 'off',
 
 		'arrow-parens': [
 			'error',
