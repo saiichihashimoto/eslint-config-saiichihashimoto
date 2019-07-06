@@ -9,6 +9,7 @@ module.exports = {
 		'plugin:promise/recommended',
 		'plugin:you-dont-need-lodash-underscore/all',
 		'plugin:you-dont-need-momentjs/recommended',
+		'plugin:unicorn/recommended',
 	],
 	...specifiedConfig,
 };
