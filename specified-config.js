@@ -104,6 +104,9 @@ module.exports = {
 
 		'react-hooks/rules-of-hooks': 'error',
 
+		'unicorn/catch-error-name': ['error', { name: 'err' }],
+		'unicorn/filename-case': 'off',
+		'unicorn/no-unreadable-array-destructuring': 'off',
 		'unicorn/prevent-abbreviations': 'off',
 
 		'arrow-parens': [
