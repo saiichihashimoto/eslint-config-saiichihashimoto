@@ -1,7 +1,5 @@
 language: node_js
 cache: npm
-node_js:
-  - 11
 branches:
   only:
     - master
@@ -14,7 +12,6 @@ notifications:
 jobs:
   include:
     - stage: release
-      node_js: lts/*
       deploy:
         provider: script
         skip_cleanup: true
