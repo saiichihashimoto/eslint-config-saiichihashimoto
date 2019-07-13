@@ -249,5 +249,23 @@ module.exports = {
 				commonjs: true,
 			},
 		},
+		{
+			files: [
+				'*.node.js',
+			],
+			settings: {
+				'import/resolver': {
+					node: {
+						extensions: [
+							'.node.js',
+							'.js',
+						],
+					},
+				},
+			},
+			env: {
+				node: true,
+			},
+		},
 	],
 };
