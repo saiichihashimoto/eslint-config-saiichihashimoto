@@ -55,6 +55,7 @@ module.exports = {
 		'import',
 		'jsx-a11y',
 		'react',
+		'react-hooks',
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
@@ -64,7 +65,6 @@ module.exports = {
 	 *    'css-modules',
 	 *    'node',
 	 *    'promise',
-	 *    'react-hooks',
 	 *    'unicorn',
 	 *],
 	 */
@@ -816,6 +816,10 @@ module.exports = {
 			prop:        'parens-new-line',
 			return:      'parens-new-line',
 		}],
+
+		// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
+		'react-hooks/rules-of-hooks':  'error',
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	overrides: [
 		{
