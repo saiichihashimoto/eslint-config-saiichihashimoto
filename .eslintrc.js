@@ -1,3 +1,4 @@
+/* eslint-disable import/no-commonjs, import/no-unused-modules */
 const confusingBrowserGlobals = require('confusing-browser-globals');
 
 module.exports = {
@@ -8,9 +9,28 @@ module.exports = {
 		},
 	},
 	settings: {
-		react: {
+		'react': {
 			version: 'detect',
 		},
+		'import/extensions': [
+			'.node.mjs',
+			'.web.mjs',
+			'.mjs',
+			'.node.js',
+			'.web.js',
+			'.js',
+			'.node.ts',
+			'.web.ts',
+			'.ts',
+			'.node.tsx',
+			'.web.tsx',
+			'.tsx',
+			'.json',
+			'.node.jsx',
+			'.web.jsx',
+			'.jsx',
+			'.node',
+		],
 	},
 
 	/*
@@ -29,11 +49,13 @@ module.exports = {
 		es6:  true,
 		node: true,
 	},
+	plugins: [
+		'import',
+	],
 
 	/*
 	 *plugins: [
 	 *    'css-modules',
-	 *    'import',
 	 *    'jsx-a11y',
 	 *    'node',
 	 *    'promise',
@@ -457,5 +479,188 @@ module.exports = {
 		'symbol-description':      'error',
 		'template-curly-spacing':  ['error', 'never'],
 		'yield-star-spacing':      ['error', 'after'],
+
+		// https://github.com/benmosher/eslint-plugin-import#static-analysis
+		'import/no-unresolved':              ['error', { commonjs: true }],
+		'import/named':                      'error',
+		'import/default':                    'error',
+		'import/namespace':                  'error',
+		'import/no-restricted-paths':        'off',
+		'import/no-absolute-path':           'error',
+		'import/no-dynamic-require':         'error',
+		'import/no-internal-modules':        'off',
+		'import/no-webpack-loader-syntax':   'error',
+		'import/no-self-import':             'error',
+		'import/no-cycle':                   'error',
+		'import/no-useless-path-segments':   'error',
+		'import/no-relative-parent-imports': 'off',
+		'import/no-unused-modules':          ['error', {
+			missingExports: true,
+			unusedExports:  false, // This always breaks when true, even if we disable it via comments
+		}],
+
+		// https://github.com/benmosher/eslint-plugin-import#helpful-warnings
+		'import/export':                     'error',
+		'import/no-deprecated':              'warn',
+		'import/no-extraneous-dependencies': ['error', {
+			devDependencies: [
+				'**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
+				'**/Gruntfile{,.js}', // grunt config
+				'**/__mocks__/**', // jest pattern
+				'**/__tests__/**', // jest pattern
+				'**/gulpfile.*.js', // gulp config
+				'**/gulpfile.js', // gulp config
+				'**/jest.config.js', // jest config
+				'**/jest.setup.js', // jest setup
+				'**/protractor.conf.*.js', // protractor config
+				'**/protractor.conf.js', // protractor config
+				'**/rollup.config.*.js', // rollup config
+				'**/rollup.config.js', // rollup config
+				'**/vue.config.js', // vue-cli config
+				'**/webpack.config.*.js', // webpack config
+				'**/webpack.config.js', // webpack config
+				'spec/**', // mocha, rspec-like pattern
+				'test-*.{js,jsx}', // repos with multiple top-level test files
+				'test.{js,jsx}', // repos with a single test file
+				'test/**', // tape, common npm pattern
+				'tests/**', // also common npm pattern
+			],
+			optionalDependencies: false,
+		}],
+		'import/no-mutable-exports':         'error',
+		'import/no-named-as-default':        'error',
+		'import/no-named-as-default-member': 'error',
+
+		// https://github.com/benmosher/eslint-plugin-import#module-systems
+		'import/no-amd':      'error',
+		'import/no-commonjs': 'error',
+		'import/unambiguous': 'off',
+
+		// https://github.com/benmosher/eslint-plugin-import#style-guide
+		'import/dynamic-import-chunkname': 'off',
+		'import/exports-last':             'error',
+		'import/extensions':               ['error', 'always', {
+			'node.mjs': 'never',
+			'web.mjs':  'never',
+			'mjs':      'never',
+			'node.js':  'never',
+			'web.js':   'never',
+			'js':       'never',
+			'node.ts':  'never',
+			'web.ts':   'never',
+			'ts':       'never',
+			'node.tsx': 'never',
+			'web.tsx':  'never',
+			'tsx':      'never',
+			'json':     'never',
+			'node.jsx': 'never',
+			'web.jsx':  'never',
+			'jsx':      'never',
+			'node':     'never',
+		}],
+		'import/first':                       'error',
+		'import/group-exports':               'error',
+		'import/max-dependencies':            'off',
+		'import/newline-after-import':        'error',
+		'import/no-anonymous-default-export': 'off',
+		'import/no-default-export':           'off',
+		'import/no-duplicates':               'error',
+		'import/no-named-default':            'error',
+		'import/no-named-export':             'off',
+		'import/no-namespace':                'error',
+		'import/no-unassigned-import':        'off',
+		'import/order':                       ['error', {
+			'groups':           ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+			'newlines-between': 'always',
+		}],
+		'import/prefer-default-export': 'off',
 	},
+	overrides: [
+		{
+			files:    ['*.web.js'],
+			settings: {
+				'import/extensions': [
+					'web.mjs',
+					'mjs',
+					'web.js',
+					'js',
+					'web.ts',
+					'ts',
+					'web.tsx',
+					'tsx',
+					'json',
+					'web.jsx',
+					'jsx',
+				],
+			},
+			env:   { browser: true, node: false },
+			rules: {
+				'import/extensions': ['error', 'always', {
+					'web.mjs': 'never',
+					'mjs':     'never',
+					'web.js':  'never',
+					'js':      'never',
+					'web.ts':  'never',
+					'ts':      'never',
+					'web.tsx': 'never',
+					'tsx':     'never',
+					'json':    'never',
+					'web.jsx': 'never',
+					'jsx':     'never',
+				}],
+				'import/no-nodejs-modules': 'error',
+			},
+		},
+		{
+			files:    ['*.node.js'],
+			settings: {
+				'import/extensions': [
+					'.node.mjs',
+					'.mjs',
+					'.node.js',
+					'.js',
+					'.node.ts',
+					'.ts',
+					'.node.tsx',
+					'.tsx',
+					'.json',
+					'.node.jsx',
+					'.jsx',
+					'.node',
+				],
+			},
+			env:   { node: true },
+			rules: {
+				'import/extensions': ['error', 'always', {
+					'node.mjs': 'never',
+					'mjs':      'never',
+					'node.js':  'never',
+					'js':       'never',
+					'node.ts':  'never',
+					'ts':       'never',
+					'node.tsx': 'never',
+					'tsx':      'never',
+					'json':     'never',
+					'node.jsx': 'never',
+					'jsx':      'never',
+					'node':     'never',
+				}],
+			},
+		},
+		{
+			files: [
+				'*.spec.js',
+				'*.test.js',
+			],
+			env: {
+				jest: true,
+			},
+			plugins: [
+				'jest',
+			],
+			rules: {
+				'jest/prefer-called-with': 'error',
+			},
+		},
+	],
 };
