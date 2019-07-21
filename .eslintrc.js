@@ -39,8 +39,6 @@ module.exports = {
 	 *    'plugin:css-modules/recommended',
 	 *    'plugin:jest/recommended',
 	 *    'plugin:promise/recommended',
-	 *    'plugin:you-dont-need-lodash-underscore/all',
-	 *    'plugin:you-dont-need-momentjs/recommended',
 	 *    'plugin:unicorn/recommended',
 	 *],
 	 */
@@ -49,10 +47,16 @@ module.exports = {
 		es6:  true,
 		node: true,
 	},
+	extends: [
+		'plugin:you-dont-need-lodash-underscore/all',
+		'plugin:you-dont-need-momentjs/recommended',
+	],
 	plugins: [
 		'import',
 		'jsx-a11y',
 		'react',
+		'you-dont-need-lodash-underscore',
+		'you-dont-need-momentjs',
 	],
 
 	/*
@@ -62,8 +66,6 @@ module.exports = {
 	 *    'promise',
 	 *    'react-hooks',
 	 *    'unicorn',
-	 *    'you-dont-need-lodash-underscore',
-	 *    'you-dont-need-momentjs',
 	 *],
 	 */
 
