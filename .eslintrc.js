@@ -140,9 +140,10 @@ module.exports = {
 		'no-labels':              'error',
 		'no-lone-blocks':         'error',
 		'no-loop-func':           'error',
-		'no-magic-numbers':       ['error', {
+		'no-magic-numbers':       ['warn', {
 			detectObjects:      false,
 			enforceConst:       true,
+			ignore:             [0, 1],
 			ignoreArrayIndexes: true,
 		}],
 		'no-multi-spaces':          ['error', { ignoreEOLComments: true }],
