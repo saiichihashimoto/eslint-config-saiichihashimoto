@@ -965,6 +965,7 @@ module.exports = {
 			},
 			plugins: [
 				'jest',
+				'jest-formatting',
 			],
 			rules: {
 				// https://github.com/jest-community/eslint-plugin-jest#rules
@@ -1004,6 +1005,9 @@ module.exports = {
 				'jest/valid-describe':           'error',
 				'jest/valid-expect':             ['error', { alwaysAwait: true }],
 				'jest/valid-expect-in-promise':  'error',
+
+				// https://github.com/dangreenisrael/eslint-plugin-jest-formatting#rule-documentation
+				'jest-formatting/padding-before-all': 'error',
 			},
 		},
 	],
