@@ -37,7 +37,6 @@ module.exports = {
 	 *extends: [
 	 *    'airbnb',
 	 *    'plugin:css-modules/recommended',
-	 *    'plugin:unicorn/recommended',
 	 *],
 	 */
 
@@ -56,6 +55,7 @@ module.exports = {
 		'promise',
 		'react',
 		'react-hooks',
+		'unicorn',
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
@@ -63,7 +63,6 @@ module.exports = {
 	/*
 	 *plugins: [
 	 *    'css-modules',
-	 *    'unicorn',
 	 *],
 	 */
 
@@ -180,7 +179,6 @@ module.exports = {
 			{ object: 'window', property: 'isNaN', message: 'Please use Number.isNaN instead' },
 			{ property: '__defineGetter__', message: 'Please use Object.defineProperty instead.' },
 			{ property: '__defineSetter__', message: 'Please use Object.defineProperty instead.' },
-			{ object: 'Math', property: 'pow', message: 'Use the exponentiation operator (**) instead.' },
 		],
 		'no-return-assign':             ['error', 'always'],
 		'no-return-await':              'error',
@@ -232,7 +230,7 @@ module.exports = {
 		'no-new-require':             'error',
 		'no-path-concat':             'error',
 		'no-process-env':             'off',
-		'no-process-exit':            'off',
+		'no-process-exit':            'error',
 		'no-restricted-modules':      'off',
 		'no-sync':                    'off',
 
@@ -465,7 +463,7 @@ module.exports = {
 			'error',
 			{
 				VariableDeclarator:   { array: false, object: true },
-				AssignmentExpression: { array: true, object: true },
+				AssignmentExpression: { array: false, object: true },
 			},
 			{ enforceForRenamedProperties: false },
 		],
@@ -848,6 +846,45 @@ module.exports = {
 		// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
 		'react-hooks/rules-of-hooks':  'error',
 		'react-hooks/exhaustive-deps': 'error',
+
+		// https://github.com/sindresorhus/eslint-plugin-unicorn#rules
+		'unicorn/catch-error-name':                  ['error', { name: 'err' }],
+		'unicorn/custom-error-definition':           'error',
+		'unicorn/error-message':                     'error',
+		'unicorn/escape-case':                       'error',
+		'unicorn/explicit-length-check':             'off',
+		'unicorn/filename-case':                     'off',
+		'unicorn/import-index':                      'error',
+		'unicorn/new-for-builtins':                  'error',
+		'unicorn/no-abusive-eslint-disable':         'error',
+		'unicorn/no-array-instanceof':               'error',
+		'unicorn/no-console-spaces':                 'error',
+		'unicorn/no-fn-reference-in-iterator':       'error',
+		'unicorn/no-for-loop':                       'error',
+		'unicorn/no-hex-escape':                     'off',
+		'unicorn/no-keyword-prefix':                 'off',
+		'unicorn/no-new-buffer':                     'error',
+		'unicorn/no-process-exit':                   'error',
+		'unicorn/no-unreadable-array-destructuring': 'error',
+		'unicorn/no-unsafe-regex':                   'error',
+		'unicorn/no-unused-properties':              'error',
+		'unicorn/no-zero-fractions':                 'error',
+		'unicorn/number-literal-case':               'error',
+		'unicorn/prefer-add-event-listener':         'error',
+		'unicorn/prefer-event-key':                  'error',
+		'unicorn/prefer-exponentiation-operator':    'error',
+		'unicorn/prefer-flat-map':                   'error',
+		'unicorn/prefer-includes':                   'error',
+		'unicorn/prefer-node-append':                'error',
+		'unicorn/prefer-node-remove':                'error',
+		'unicorn/prefer-query-selector':             'error',
+		'unicorn/prefer-spread':                     'error',
+		'unicorn/prefer-starts-ends-with':           'error',
+		'unicorn/prefer-text-content':               'error',
+		'unicorn/prefer-type-error':                 'error',
+		'unicorn/prevent-abbreviations':             'off',
+		'unicorn/regex-shorthand':                   'error',
+		'unicorn/throw-new-error':                   'error',
 	},
 	overrides: [
 		{
