@@ -11,7 +11,12 @@ notifications:
     on_failure: always
 jobs:
   include:
+    - stage: test
+      if: type = pull_request
     - stage: release
+      if: type = push
+      script: skip
+      after_success: true
       deploy:
         provider: script
         skip_cleanup: true
