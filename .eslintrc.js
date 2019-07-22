@@ -42,7 +42,6 @@ module.exports = {
 		'plugin:you-dont-need-momentjs/recommended',
 	],
 	plugins: [
-		'css-modules',
 		'import',
 		'jsx-a11y',
 		'node',
@@ -241,7 +240,7 @@ module.exports = {
 		'comma-style':               ['error', 'last'],
 		'computed-property-spacing': ['error', 'never'],
 		'consistent-this':           'off',
-		'eol-last':                  ['error', 'never'],
+		'eol-last':                  ['error', 'always'],
 		'func-call-spacing':         ['error', 'never'],
 		'func-name-matching':        ['error', 'always'],
 		'func-names':                ['error', 'as-needed'],
@@ -313,7 +312,7 @@ module.exports = {
 			newIsCap:           true,
 			newIsCapExceptions: [],
 		}],
-		'new-parens':               ['error', 'always'],
+		'new-parens':               'error',
 		'newline-per-chained-call': 'error',
 		'no-array-constructor':     'error',
 		'no-bitwise':               'error',
@@ -518,9 +517,10 @@ module.exports = {
 		'import/no-named-as-default-member': 'error',
 
 		// https://github.com/benmosher/eslint-plugin-import#module-systems
-		'import/no-amd':      'error',
-		'import/no-commonjs': 'error',
-		'import/unambiguous': 'off',
+		'import/no-amd':            'error',
+		'import/no-commonjs':       'error',
+		'import/no-nodejs-modules': 'off',
+		'import/unambiguous':       'off',
 
 		// https://github.com/benmosher/eslint-plugin-import#style-guide
 		'import/dynamic-import-chunkname': 'off',
@@ -582,6 +582,7 @@ module.exports = {
 		'jsx-a11y/aria-role':                          ['error', { ignoreNonDom: false }],
 		'jsx-a11y/aria-unsupported-elements':          'error',
 		'jsx-a11y/click-events-have-key-events':       'warn',
+		'jsx-a11y/control-has-associated-label':       'off',
 		'jsx-a11y/heading-has-content':                'error',
 		'jsx-a11y/html-has-lang':                      'error',
 		'jsx-a11y/iframe-has-title':                   'error',
@@ -644,8 +645,18 @@ module.exports = {
 		'jsx-a11y/tabindex-no-positive':         'error',
 
 		// https://github.com/mysticatea/eslint-plugin-node#possible-errors
-		'node/process-exit-as-throw': 'error',
-		'node/shebang':               ['error', {
+		'node/no-extraneous-import':                  'off',
+		'node/no-extraneous-require':                 'off',
+		'node/no-missing-import':                     'off',
+		'node/no-missing-require':                    'off',
+		'node/no-unpublished-bin':                    'off',
+		'node/no-unpublished-import':                 'off',
+		'node/no-unpublished-require':                'off',
+		'node/no-unsupported-features/es-builtins':   'off',
+		'node/no-unsupported-features/es-syntax':     'off',
+		'node/no-unsupported-features/node-builtins': 'off',
+		'node/process-exit-as-throw':                 'error',
+		'node/shebang':                               ['error', {
 			convertPath: {
 				'src/**/*': ['^src/(.+?)$', 'lib/$1'],
 			},
@@ -655,7 +666,17 @@ module.exports = {
 		'node/no-deprecated-api': 'error',
 
 		// https://github.com/mysticatea/eslint-plugin-node#stylistic-issues
-		'node/exports-style': ['error', 'module.exports'],
+		'node/exports-style':                   ['error', 'module.exports'],
+		'node/file-extension-in-import':        'off',
+		'node/prefer-global/buffer':            'off',
+		'node/prefer-global/console':           'off',
+		'node/prefer-global/process':           'off',
+		'node/prefer-global/text-decoder':      'off',
+		'node/prefer-global/text-encoder':      'off',
+		'node/prefer-global/url':               'off',
+		'node/prefer-global/url-search-params': 'off',
+		'node/prefer-promises/dns':             'off',
+		'node/prefer-promises/fs':              'off',
 
 		// https://github.com/xjamundx/eslint-plugin-promise#rules
 		'promise/always-return':             'error',
@@ -892,7 +913,13 @@ module.exports = {
 					'jsx',
 				],
 			},
-			env:   { browser: true, node: false },
+			env: {
+				browser: true,
+				node:    false,
+			},
+			plugins: [
+				'css-modules',
+			],
 			rules: {
 				// https://github.com/atfzl/eslint-plugin-css-modules#rules
 				'css-modules/no-undef-class':  'error',
