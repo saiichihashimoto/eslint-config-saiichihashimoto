@@ -37,7 +37,6 @@ module.exports = {
 	 *extends: [
 	 *    'airbnb',
 	 *    'plugin:css-modules/recommended',
-	 *    'plugin:promise/recommended',
 	 *    'plugin:unicorn/recommended',
 	 *],
 	 */
@@ -54,6 +53,7 @@ module.exports = {
 		'import',
 		'jsx-a11y',
 		'node',
+		'promise',
 		'react',
 		'react-hooks',
 		'you-dont-need-lodash-underscore',
@@ -63,7 +63,6 @@ module.exports = {
 	/*
 	 *plugins: [
 	 *    'css-modules',
-	 *    'promise',
 	 *    'unicorn',
 	 *],
 	 */
@@ -671,6 +670,22 @@ module.exports = {
 
 		// https://github.com/mysticatea/eslint-plugin-node#stylistic-issues
 		'node/exports-style': ['error', 'module.exports'],
+
+		// https://github.com/xjamundx/eslint-plugin-promise#rules
+		'promise/always-return':             'error',
+		'promise/avoid-new':                 'off',
+		'promise/catch-or-return':           'error',
+		'promise/no-callback-in-promise':    'warn',
+		'promise/no-native':                 'off',
+		'promise/no-nesting':                'warn',
+		'promise/no-new-statics':            'error',
+		'promise/no-promise-in-callback':    'warn',
+		'promise/no-return-in-finally':      'error',
+		'promise/no-return-wrap':            'error',
+		'promise/param-names':               'error',
+		'promise/prefer-await-to-callbacks': 'error',
+		'promise/prefer-await-to-then':      'error',
+		'promise/valid-params':              'error',
 
 		// https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
 		'react/boolean-prop-naming':                  'off',
