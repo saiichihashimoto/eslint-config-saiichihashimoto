@@ -1,4 +1,3 @@
-/* eslint-disable import/no-commonjs, import/no-unused-modules */
 const confusingBrowserGlobals = require('confusing-browser-globals');
 
 module.exports = {
@@ -218,7 +217,7 @@ module.exports = {
 		'no-new-require':             'error',
 		'no-path-concat':             'error',
 		'no-process-env':             'off',
-		'no-process-exit':            'error',
+		'no-process-exit':            'off',
 		'no-restricted-modules':      'off',
 		'no-sync':                    'off',
 
@@ -246,7 +245,7 @@ module.exports = {
 		'func-name-matching':        ['error', 'always'],
 		'func-names':                ['error', 'as-needed'],
 		'func-style':                ['error', 'expression'],
-		'function-paren-newline':    ['error', 'multiline'],
+		'function-paren-newline':    ['error', 'multiline-arguments'],
 		'id-blacklist':              'off',
 		'id-length':                 'off',
 		'id-match':                  'off',
@@ -369,7 +368,6 @@ module.exports = {
 			// Padding After
 			{ blankLine: 'always', prev: 'cjs-import', next: '*' },
 			{ blankLine: 'always', prev: 'directive', next: '*' },
-			{ blankLine: 'always', prev: 'import', next: '*' },
 
 			// Padding Before
 			{ blankLine: 'always', prev: '*', next: 'break' },
@@ -461,7 +459,7 @@ module.exports = {
 		'prefer-template':         'error',
 		'require-yield':           'error',
 		'rest-spread-spacing':     ['error', 'never'],
-		'sort-imports':            'error',
+		'sort-imports':            'off',
 		'symbol-description':      'error',
 		'template-curly-spacing':  ['error', 'never'],
 		'yield-star-spacing':      ['error', 'after'],
@@ -898,6 +896,19 @@ module.exports = {
 	},
 	overrides: [
 		{
+			files: ['./*.js'],
+			env:   {
+				commonjs: true,
+			},
+			rules: {
+				// https://github.com/benmosher/eslint-plugin-import#static-analysis
+				'import/no-unused-modules': 'off',
+
+				// https://github.com/benmosher/eslint-plugin-import#module-systems
+				'import/no-commonjs': 'off',
+			},
+		},
+		{
 			files:    ['*.web.js'],
 			settings: {
 				'import/extensions': [
@@ -996,6 +1007,9 @@ module.exports = {
 				'jest-formatting',
 			],
 			rules: {
+				// https://github.com/benmosher/eslint-plugin-import#static-analysis
+				'import/no-unused-modules': 'off',
+
 				// https://github.com/jest-community/eslint-plugin-jest#rules
 				'jest/consistent-test-it':       ['error', { fn: 'it', withinDescribe: 'it' }],
 				'jest/expect-expect':            'error',
