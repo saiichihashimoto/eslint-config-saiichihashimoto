@@ -53,6 +53,7 @@ module.exports = {
 	plugins: [
 		'import',
 		'jsx-a11y',
+		'node',
 		'react',
 		'react-hooks',
 		'you-dont-need-lodash-underscore',
@@ -62,7 +63,6 @@ module.exports = {
 	/*
 	 *plugins: [
 	 *    'css-modules',
-	 *    'node',
 	 *    'promise',
 	 *    'unicorn',
 	 *],
@@ -657,6 +657,20 @@ module.exports = {
 		'jsx-a11y/role-supports-aria-props':     'error',
 		'jsx-a11y/scope':                        'error',
 		'jsx-a11y/tabindex-no-positive':         'error',
+
+		// https://github.com/mysticatea/eslint-plugin-node#possible-errors
+		'node/process-exit-as-throw': 'error',
+		'node/shebang':               ['error', {
+			convertPath: {
+				'src/**/*': ['^src/(.+?)$', 'lib/$1'],
+			},
+		}],
+
+		// https://github.com/mysticatea/eslint-plugin-node#best-practices
+		'node/no-deprecated-api': 'error',
+
+		// https://github.com/mysticatea/eslint-plugin-node#stylistic-issues
+		'node/exports-style': ['error', 'module.exports'],
 
 		// https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
 		'react/boolean-prop-naming':                  'off',
