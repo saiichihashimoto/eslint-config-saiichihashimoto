@@ -36,7 +36,6 @@ module.exports = {
 	/*
 	 *extends: [
 	 *    'airbnb',
-	 *    'plugin:css-modules/recommended',
 	 *],
 	 */
 
@@ -49,6 +48,7 @@ module.exports = {
 		'plugin:you-dont-need-momentjs/recommended',
 	],
 	plugins: [
+		'css-modules',
 		'import',
 		'jsx-a11y',
 		'node',
@@ -59,12 +59,6 @@ module.exports = {
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
-
-	/*
-	 *plugins: [
-	 *    'css-modules',
-	 *],
-	 */
 
 	rules: {
 		// https://eslint.org/docs/rules/#possible-errors
@@ -906,6 +900,14 @@ module.exports = {
 			},
 			env:   { browser: true, node: false },
 			rules: {
+				// https://github.com/atfzl/eslint-plugin-css-modules#rules
+				'css-modules/no-undef-class':  'error',
+				'css-modules/no-unused-class': 'warn',
+
+				// https://github.com/benmosher/eslint-plugin-import#module-systems
+				'import/no-nodejs-modules': 'error',
+
+				// https://github.com/benmosher/eslint-plugin-import#style-guide
 				'import/extensions': ['error', 'always', {
 					'web.mjs': 'never',
 					'mjs':     'never',
@@ -919,7 +921,6 @@ module.exports = {
 					'web.jsx': 'never',
 					'jsx':     'never',
 				}],
-				'import/no-nodejs-modules': 'error',
 			},
 		},
 		{
@@ -942,6 +943,8 @@ module.exports = {
 			},
 			env:   { node: true },
 			rules: {
+				// https://github.com/benmosher/eslint-plugin-import#style-guide
+
 				'import/extensions': ['error', 'always', {
 					'node.mjs': 'never',
 					'mjs':      'never',
@@ -970,6 +973,7 @@ module.exports = {
 				'jest',
 			],
 			rules: {
+				// https://github.com/jest-community/eslint-plugin-jest#rules
 				'jest/consistent-test-it':       ['error', { fn: 'it', withinDescribe: 'it' }],
 				'jest/expect-expect':            'error',
 				'jest/lowercase-name':           ['error', { ignore: ['describe'] }],
