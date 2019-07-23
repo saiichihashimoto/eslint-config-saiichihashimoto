@@ -72,11 +72,11 @@ module.exports = {
 		'no-ex-assign':              'error',
 		'no-extra-boolean-cast':     'error',
 		'no-extra-parens':           ['error', 'all', {
-			conditionalAssign:           true,
+			conditionalAssign:           false,
 			enforceForArrowConditionals: false,
 			ignoreJSX:                   'multi-line',
 			nestedBinaryExpressions:     false,
-			returnAssign:                true,
+			returnAssign:                false,
 		}],
 		'no-extra-semi':           'error',
 		'no-func-assign':          'error',
