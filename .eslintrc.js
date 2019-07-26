@@ -271,11 +271,17 @@ module.exports = {
 		'func-names':                ['error', 'as-needed'],
 		'func-style':                ['error', 'expression'],
 		'function-paren-newline':    ['error', 'multiline'],
-		'id-blacklist':              'off',
-		'id-length':                 'off',
-		'id-match':                  'off',
-		'implicit-arrow-linebreak':  ['error', 'beside'],
-		'indent':                    ['error', 'tab', {
+
+		/*
+		 * TODO #159
+		 * 'function-paren-newline': ['error', 'multiline-arguments'],
+		 */
+
+		'id-blacklist':             'off',
+		'id-length':                'off',
+		'id-match':                 'off',
+		'implicit-arrow-linebreak': ['error', 'beside'],
+		'indent':                   ['error', 'tab', {
 			ArrayExpression:     1,
 			CallExpression:      { arguments: 1 },
 			FunctionDeclaration: {
@@ -827,11 +833,21 @@ module.exports = {
 		'react/jsx-first-prop-new-line':      ['error', 'multiline'],
 		'react/jsx-handler-names':            ['off', { eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on' }],
 		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true }],
-		'react/jsx-indent-props':             ['error', 'tab'],
-		'react/jsx-key':                      'error',
-		'react/jsx-max-depth':                'off',
-		'react/jsx-max-props-per-line':       ['error', { maximum: 1, when: 'multiline' }],
-		'react/jsx-no-bind':                  ['error', {
+
+		/*
+		 * TODO #159
+		 * 'react/jsx-indent': [
+		 *   'error',
+		 *   'tab',
+		 *   { checkAttributes: true, indentLogicalExpressions: true }
+		 * ],
+		 */
+
+		'react/jsx-indent-props':       ['error', 'tab'],
+		'react/jsx-key':                'error',
+		'react/jsx-max-depth':          'off',
+		'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
+		'react/jsx-no-bind':            ['error', {
 			allowArrowFunctions: true,
 			allowBind:           false,
 			allowFunctions:      false,
