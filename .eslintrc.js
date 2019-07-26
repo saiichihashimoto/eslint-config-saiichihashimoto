@@ -803,7 +803,7 @@ module.exports = {
 		'react/jsx-filename-extension':       'off',
 		'react/jsx-first-prop-new-line':      ['error', 'multiline'],
 		'react/jsx-handler-names':            ['off', { eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on' }],
-		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
+		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true }],
 		'react/jsx-indent-props':             ['error', 'tab'],
 		'react/jsx-key':                      'error',
 		'react/jsx-max-depth':                'off',
