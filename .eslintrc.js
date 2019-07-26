@@ -32,6 +32,29 @@ module.exports = {
 			'.jsx',
 			'.node',
 		],
+		'import/resolver': {
+			node: {
+				extensions: [
+					'.node.mjs',
+					'.web.mjs',
+					'.mjs',
+					'.node.js',
+					'.web.js',
+					'.js',
+					'.node.ts',
+					'.web.ts',
+					'.ts',
+					'.node.tsx',
+					'.web.tsx',
+					'.tsx',
+					'.json',
+					'.node.jsx',
+					'.web.jsx',
+					'.jsx',
+					'.node',
+				],
+			},
+		},
 	},
 
 	env: {
@@ -913,19 +936,23 @@ module.exports = {
 		{
 			files:    ['*.web.js'],
 			settings: {
-				'import/extensions': [
-					'web.mjs',
-					'mjs',
-					'web.js',
-					'js',
-					'web.ts',
-					'ts',
-					'web.tsx',
-					'tsx',
-					'json',
-					'web.jsx',
-					'jsx',
-				],
+				'import/resolver': {
+					node: {
+						extensions: [
+							'.web.mjs',
+							'.mjs',
+							'.web.js',
+							'.js',
+							'.web.ts',
+							'.ts',
+							'.web.tsx',
+							'.tsx',
+							'.json',
+							'.web.jsx',
+							'.jsx',
+						],
+					},
+				},
 			},
 			env: {
 				browser: true,
@@ -961,20 +988,24 @@ module.exports = {
 		{
 			files:    ['*.node.js'],
 			settings: {
-				'import/extensions': [
-					'.node.mjs',
-					'.mjs',
-					'.node.js',
-					'.js',
-					'.node.ts',
-					'.ts',
-					'.node.tsx',
-					'.tsx',
-					'.json',
-					'.node.jsx',
-					'.jsx',
-					'.node',
-				],
+				'import/resolver': {
+					node: {
+						extensions: [
+							'.node.mjs',
+							'.mjs',
+							'.node.js',
+							'.js',
+							'.node.ts',
+							'.ts',
+							'.node.tsx',
+							'.tsx',
+							'.json',
+							'.node.jsx',
+							'.jsx',
+							'.node',
+						],
+					},
+				},
 			},
 			env:   { node: true },
 			rules: {
