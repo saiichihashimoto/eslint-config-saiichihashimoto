@@ -168,14 +168,28 @@ module.exports = {
 			ignore:             [0, 1],
 			ignoreArrayIndexes: true,
 		}],
-		'no-multi-spaces':          ['error', { ignoreEOLComments: true }],
-		'no-multi-str':             'error',
-		'no-new':                   'error',
-		'no-new-func':              'error',
-		'no-new-wrappers':          'error',
-		'no-octal':                 'error',
-		'no-octal-escape':          'error',
-		'no-param-reassign':        ['error', { props: true }],
+		'no-multi-spaces':   ['error', { ignoreEOLComments: true }],
+		'no-multi-str':      'error',
+		'no-new':            'error',
+		'no-new-func':       'error',
+		'no-new-wrappers':   'error',
+		'no-octal':          'error',
+		'no-octal-escape':   'error',
+		'no-param-reassign': ['error', {
+			props:                          true,
+			ignorePropertyModificationsFor: [
+				'acc', // for reduce accumulators
+				'accumulator', // for reduce accumulators
+				'e', // for e.returnvalue
+				'ctx', // for Koa routing
+				'req', // for Express requests
+				'request', // for Express requests
+				'res', // for Express responses
+				'response', // for Express responses
+				'$scope', // for Angular 1 scopes
+				'staticContext', // for ReactRouter context
+			],
+		}],
 		'no-proto':                 'error',
 		'no-redeclare':             'error',
 		'no-restricted-properties': [
@@ -851,7 +865,7 @@ module.exports = {
 		'react/jsx-no-literals':             'off',
 		'react/jsx-no-target-blank':         ['error', { enforceDynamicLinks: 'always' }],
 		'react/jsx-no-undef':                ['error', { allowGlobals: true }],
-		'react/jsx-one-expression-per-line': 'error',
+		'react/jsx-one-expression-per-line': ['error', { allow: 'literal' }],
 		'react/jsx-curly-brace-presence':    ['error', { props: 'never', children: 'never' }],
 		'react/jsx-fragments':               ['error', 'syntax'],
 		'react/jsx-pascal-case':             'error',
