@@ -27,11 +27,11 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "run-s test:*",
-    "pretest:fail": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
-    "test:fail": "for i in fail/*.js; do echo \"eslint $i\" should fail; ! eslint $i; done",
-    "posttest:fail": "rm fail/*.js",
-    "test:find-rules": "eslint-find-rules --unused --deprecated",
-    "test:success": "eslint success"
+    "test:exit-code-0": "eslint success",
+    "pretest:exit-code-1": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
+    "test:exit-code-1": "for i in fail/*.js; do echo \"eslint $i\" should fail; ! eslint $i; done",
+    "posttest:exit-code-1": "rm fail/*.js",
+    "test:find-rules": "eslint-find-rules --unused --deprecated"
   },
   "config": {
     "commitizen": {
