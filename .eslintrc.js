@@ -1,3 +1,5 @@
+/* eslint-disable import/no-commonjs,import/no-unused-modules */
+
 const confusingBrowserGlobals = require('confusing-browser-globals');
 
 module.exports = {
@@ -245,7 +247,7 @@ module.exports = {
 		'func-name-matching':        ['error', 'always'],
 		'func-names':                ['error', 'as-needed'],
 		'func-style':                ['error', 'expression'],
-		'function-paren-newline':    ['error', 'multiline-arguments'],
+		'function-paren-newline':    ['error', 'multiline'],
 		'id-blacklist':              'off',
 		'id-length':                 'off',
 		'id-match':                  'off',
@@ -801,7 +803,7 @@ module.exports = {
 		'react/jsx-filename-extension':       'off',
 		'react/jsx-first-prop-new-line':      ['error', 'multiline'],
 		'react/jsx-handler-names':            ['off', { eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on' }],
-		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
+		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true }],
 		'react/jsx-indent-props':             ['error', 'tab'],
 		'react/jsx-key':                      'error',
 		'react/jsx-max-depth':                'off',
