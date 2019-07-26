@@ -1,3 +1,3 @@
-/* eslint-disable import/no-commonjs, import/no-extraneous-dependencies, import/no-unused-modules */
+/* eslint-disable import/no-extraneous-dependencies */
 
 module.exports = require('lint-my-app/husky');
