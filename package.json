@@ -25,6 +25,14 @@
   },
   "license": "MIT",
   "main": ".eslintrc.js",
+  "scripts": {
+    "test": "run-s test:*",
+    "pretest:fail": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
+    "test:fail": "for i in fail/*.js; do echo \"eslint $i\" should fail; ! eslint $i; done",
+    "posttest:fail": "rm fail/*.js",
+    "test:find-rules": "eslint-find-rules --unused --deprecated",
+    "test:success": "eslint success"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -44,14 +52,16 @@
     "eslint-plugin-react-hooks": "1.6.1",
     "eslint-plugin-unicorn": "10.0.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "6.5.0",
-    "eslint-plugin-you-dont-need-momentjs": "1.5.0",
-    "react": "16.8.6"
+    "eslint-plugin-you-dont-need-momentjs": "1.5.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.0.2",
     "eslint": "5.16.0",
+    "eslint-find-rules": "3.3.1",
     "husky": "3.0.1",
-    "lint-my-app": "3.5.2"
+    "lint-my-app": "3.5.3",
+    "npm-run-all": "4.1.5",
+    "react": "16.8.6"
   },
   "peerDependencies": {
     "eslint": ">=5.0.0 <6.0.0"
