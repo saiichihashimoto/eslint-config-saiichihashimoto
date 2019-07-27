@@ -1,5 +1,3 @@
-/* eslint-disable import/no-commonjs,import/no-unused-modules */
-
 const confusingBrowserGlobals = require('confusing-browser-globals');
 
 module.exports = {
@@ -32,6 +30,29 @@ module.exports = {
 			'.jsx',
 			'.node',
 		],
+		'import/resolver': {
+			node: {
+				extensions: [
+					'.node.mjs',
+					'.web.mjs',
+					'.mjs',
+					'.node.js',
+					'.web.js',
+					'.js',
+					'.node.ts',
+					'.web.ts',
+					'.ts',
+					'.node.tsx',
+					'.web.tsx',
+					'.tsx',
+					'.json',
+					'.node.jsx',
+					'.web.jsx',
+					'.jsx',
+					'.node',
+				],
+			},
+		},
 	},
 
 	env: {
@@ -147,14 +168,28 @@ module.exports = {
 			ignore:             [0, 1],
 			ignoreArrayIndexes: true,
 		}],
-		'no-multi-spaces':          ['error', { ignoreEOLComments: true }],
-		'no-multi-str':             'error',
-		'no-new':                   'error',
-		'no-new-func':              'error',
-		'no-new-wrappers':          'error',
-		'no-octal':                 'error',
-		'no-octal-escape':          'error',
-		'no-param-reassign':        ['error', { props: true }],
+		'no-multi-spaces':   ['error', { ignoreEOLComments: true }],
+		'no-multi-str':      'error',
+		'no-new':            'error',
+		'no-new-func':       'error',
+		'no-new-wrappers':   'error',
+		'no-octal':          'error',
+		'no-octal-escape':   'error',
+		'no-param-reassign': ['error', {
+			props:                          true,
+			ignorePropertyModificationsFor: [
+				'acc', // for reduce accumulators
+				'accumulator', // for reduce accumulators
+				'e', // for e.returnvalue
+				'ctx', // for Koa routing
+				'req', // for Express requests
+				'request', // for Express requests
+				'res', // for Express responses
+				'response', // for Express responses
+				'$scope', // for Angular 1 scopes
+				'staticContext', // for ReactRouter context
+			],
+		}],
 		'no-proto':                 'error',
 		'no-redeclare':             'error',
 		'no-restricted-properties': [
@@ -247,7 +282,7 @@ module.exports = {
 		'func-name-matching':        ['error', 'always'],
 		'func-names':                ['error', 'as-needed'],
 		'func-style':                ['error', 'expression'],
-		'function-paren-newline':    ['error', 'multiline'],
+		'function-paren-newline':    ['error', 'multiline-arguments'],
 		'id-blacklist':              'off',
 		'id-length':                 'off',
 		'id-match':                  'off',
@@ -803,7 +838,7 @@ module.exports = {
 		'react/jsx-filename-extension':       'off',
 		'react/jsx-first-prop-new-line':      ['error', 'multiline'],
 		'react/jsx-handler-names':            ['off', { eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on' }],
-		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true }],
+		 'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
 		'react/jsx-indent-props':             ['error', 'tab'],
 		'react/jsx-key':                      'error',
 		'react/jsx-max-depth':                'off',
@@ -820,7 +855,7 @@ module.exports = {
 		'react/jsx-no-literals':             'off',
 		'react/jsx-no-target-blank':         ['error', { enforceDynamicLinks: 'always' }],
 		'react/jsx-no-undef':                ['error', { allowGlobals: true }],
-		'react/jsx-one-expression-per-line': 'error',
+		'react/jsx-one-expression-per-line': ['error', { allow: 'literal' }],
 		'react/jsx-curly-brace-presence':    ['error', { props: 'never', children: 'never' }],
 		'react/jsx-fragments':               ['error', 'syntax'],
 		'react/jsx-pascal-case':             'error',
@@ -913,19 +948,23 @@ module.exports = {
 		{
 			files:    ['*.web.js'],
 			settings: {
-				'import/extensions': [
-					'web.mjs',
-					'mjs',
-					'web.js',
-					'js',
-					'web.ts',
-					'ts',
-					'web.tsx',
-					'tsx',
-					'json',
-					'web.jsx',
-					'jsx',
-				],
+				'import/resolver': {
+					node: {
+						extensions: [
+							'.web.mjs',
+							'.mjs',
+							'.web.js',
+							'.js',
+							'.web.ts',
+							'.ts',
+							'.web.tsx',
+							'.tsx',
+							'.json',
+							'.web.jsx',
+							'.jsx',
+						],
+					},
+				},
 			},
 			env: {
 				browser: true,
@@ -961,20 +1000,24 @@ module.exports = {
 		{
 			files:    ['*.node.js'],
 			settings: {
-				'import/extensions': [
-					'.node.mjs',
-					'.mjs',
-					'.node.js',
-					'.js',
-					'.node.ts',
-					'.ts',
-					'.node.tsx',
-					'.tsx',
-					'.json',
-					'.node.jsx',
-					'.jsx',
-					'.node',
-				],
+				'import/resolver': {
+					node: {
+						extensions: [
+							'.node.mjs',
+							'.mjs',
+							'.node.js',
+							'.js',
+							'.node.ts',
+							'.ts',
+							'.node.tsx',
+							'.tsx',
+							'.json',
+							'.node.jsx',
+							'.jsx',
+							'.node',
+						],
+					},
+				},
 			},
 			env:   { node: true },
 			rules: {
