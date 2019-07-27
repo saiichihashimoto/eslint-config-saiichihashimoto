@@ -219,7 +219,7 @@ module.exports = {
 		'no-void':                      'error',
 		'no-warning-comments':          'off',
 		'no-with':                      'error',
-		'prefer-named-capture-group':   'error',
+		'prefer-named-capture-group':   'off',
 		'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
 		'radix':                        'error',
 		'require-await':                'error',
