@@ -908,7 +908,7 @@ module.exports = {
 		'unicorn/no-new-buffer':                     'error',
 		'unicorn/no-process-exit':                   'error',
 		'unicorn/no-unreadable-array-destructuring': 'error',
-		'unicorn/no-unsafe-regex':                   'error',
+		'unicorn/no-unsafe-regex':                   'off', // Too many false positives
 		'unicorn/no-unused-properties':              'error',
 		'unicorn/no-zero-fractions':                 'error',
 		'unicorn/number-literal-case':               'error',
