@@ -54,10 +54,12 @@ module.exports = {
 			},
 		},
 	},
-
 	env: {
 		es6:  true,
 		node: true,
+	},
+	globals: {
+		process: 'readonly',
 	},
 	extends: [
 		'plugin:you-dont-need-lodash-underscore/all',
@@ -162,20 +164,15 @@ module.exports = {
 		'no-labels':              'error',
 		'no-lone-blocks':         'error',
 		'no-loop-func':           'error',
-		'no-magic-numbers':       ['warn', {
-			detectObjects:      false,
-			enforceConst:       true,
-			ignore:             [0, 1],
-			ignoreArrayIndexes: true,
-		}],
-		'no-multi-spaces':   ['error', { ignoreEOLComments: true }],
-		'no-multi-str':      'error',
-		'no-new':            'error',
-		'no-new-func':       'error',
-		'no-new-wrappers':   'error',
-		'no-octal':          'error',
-		'no-octal-escape':   'error',
-		'no-param-reassign': ['error', {
+		'no-magic-numbers':       'off',
+		'no-multi-spaces':        ['error', { ignoreEOLComments: true }],
+		'no-multi-str':           'error',
+		'no-new':                 'error',
+		'no-new-func':            'error',
+		'no-new-wrappers':        'error',
+		'no-octal':               'error',
+		'no-octal-escape':        'error',
+		'no-param-reassign':      ['error', {
 			props:                          true,
 			ignorePropertyModificationsFor: [
 				'acc', // for reduce accumulators
@@ -299,7 +296,7 @@ module.exports = {
 			ObjectExpression:       1,
 			SwitchCase:             1,
 			VariableDeclarator:     'first',
-			flatTernaryExpressions: false,
+			flatTernaryExpressions: true,
 			ignoreComments:         false,
 			ignoredNodes:           ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
 			outerIIFEBody:          1,
@@ -361,7 +358,7 @@ module.exports = {
 		'no-multi-assign':          'error',
 		'no-multiple-empty-lines':  ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
 		'no-negated-condition':     'error',
-		'no-nested-ternary':        'error',
+		'no-nested-ternary':        'off',
 		'no-new-object':            'error',
 		'no-plusplus':              ['error', { allowForLoopAfterthoughts: true }],
 		'no-restricted-syntax':     [
@@ -1052,6 +1049,9 @@ module.exports = {
 				'jest-formatting',
 			],
 			rules: {
+				// https://eslint.org/docs/rules/#best-practices
+				'no-global-assign': 'off',
+
 				// https://github.com/benmosher/eslint-plugin-import#static-analysis
 				'import/no-unused-modules': 'off',
 
