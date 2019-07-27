@@ -296,7 +296,7 @@ module.exports = {
 			ObjectExpression:       1,
 			SwitchCase:             1,
 			VariableDeclarator:     'first',
-			flatTernaryExpressions: false,
+			flatTernaryExpressions: true,
 			ignoreComments:         false,
 			ignoredNodes:           ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
 			outerIIFEBody:          1,
@@ -358,7 +358,7 @@ module.exports = {
 		'no-multi-assign':          'error',
 		'no-multiple-empty-lines':  ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
 		'no-negated-condition':     'error',
-		'no-nested-ternary':        'error',
+		'no-nested-ternary':        'off',
 		'no-new-object':            'error',
 		'no-plusplus':              ['error', { allowForLoopAfterthoughts: true }],
 		'no-restricted-syntax':     [
