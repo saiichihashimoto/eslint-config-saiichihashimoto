@@ -578,7 +578,7 @@ module.exports = {
 			'node':     'never',
 		}],
 		'import/first':                       'error',
-		'import/group-exports':               'error',
+		'import/group-exports':               'off',
 		'import/max-dependencies':            'off',
 		'import/newline-after-import':        'error',
 		'import/no-anonymous-default-export': 'off',
