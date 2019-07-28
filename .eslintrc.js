@@ -512,10 +512,7 @@ module.exports = {
 		'import/no-cycle':                   'error',
 		'import/no-useless-path-segments':   'error',
 		'import/no-relative-parent-imports': 'off',
-		'import/no-unused-modules':          ['error', {
-			missingExports: true,
-			unusedExports:  false, // This always breaks when true, even if we disable it via comments
-		}],
+		'import/no-unused-modules':          'off',
 
 		// https://github.com/benmosher/eslint-plugin-import#helpful-warnings
 		'import/export':                     'error',
@@ -935,8 +932,6 @@ module.exports = {
 				commonjs: true,
 			},
 			rules: {
-				// https://github.com/benmosher/eslint-plugin-import#static-analysis
-				'import/no-unused-modules': 'off',
 
 				// https://github.com/benmosher/eslint-plugin-import#module-systems
 				'import/no-commonjs': 'off',
@@ -1051,9 +1046,6 @@ module.exports = {
 			rules: {
 				// https://eslint.org/docs/rules/#best-practices
 				'no-global-assign': 'off',
-
-				// https://github.com/benmosher/eslint-plugin-import#static-analysis
-				'import/no-unused-modules': 'off',
 
 				// https://github.com/jest-community/eslint-plugin-jest#rules
 				'jest/consistent-test-it':       ['error', { fn: 'it', withinDescribe: 'it' }],
