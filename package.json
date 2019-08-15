@@ -30,7 +30,8 @@
     "test:exit-code-0": "eslint success",
     "pretest:exit-code-1": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
     "test:exit-code-1": "for i in fail/*.js; do echo \"eslint $i\" should fail; ! eslint $i; done",
-    "posttest:exit-code-1": "rm fail/*.js"
+    "posttest:exit-code-1": "rm fail/*.js",
+    "test:find-rules": "eslint-find-rules --deprecated --unused .eslintrc.js"
   },
   "config": {
     "commitizen": {
@@ -56,6 +57,7 @@
   "devDependencies": {
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.1.0",
+    "eslint-find-rules": "3.4.0",
     "husky": "3.0.3",
     "lint-my-app": "3.7.5",
     "npm-run-all": "4.1.5",
