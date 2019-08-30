@@ -676,6 +676,7 @@ module.exports = {
 		'jsx-a11y/tabindex-no-positive':         'error',
 
 		// https://github.com/mysticatea/eslint-plugin-node#possible-errors
+		'node/no-callback-literal':                   'error',
 		'node/no-extraneous-import':                  'off',
 		'node/no-extraneous-require':                 'off',
 		'node/no-missing-import':                     'off',
