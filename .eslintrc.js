@@ -105,6 +105,7 @@ module.exports = {
 		}],
 		'no-extra-semi':           'error',
 		'no-func-assign':          'error',
+		'no-import-assign':        'error',
 		'no-inner-declarations':   ['error', 'both'],
 		'no-invalid-regexp':       'error',
 		'no-irregular-whitespace': ['error', {
@@ -136,6 +137,7 @@ module.exports = {
 		'consistent-return':      ['error', { treatUndefinedAsUnspecified: true }],
 		'curly':                  ['error', 'all'],
 		'default-case':           'off',
+		'default-param-last':     'warn',
 		'dot-location':           ['error', 'property'],
 		'dot-notation':           'error',
 		'eqeqeq':                 ['error', 'always'],
@@ -221,6 +223,7 @@ module.exports = {
 		'no-with':                      'error',
 		'prefer-named-capture-group':   'off',
 		'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
+		'prefer-regex-literals':        'error',
 		'radix':                        'error',
 		'require-await':                'error',
 		'require-unicode-regexp':       'error',
@@ -1076,6 +1079,7 @@ module.exports = {
 				'jest/no-try-expect':              'error',
 				'jest/prefer-called-with':         'error',
 				'jest/prefer-expect-assertions':   'off',
+				'jest/prefer-hooks-on-top':        'error',
 				'jest/prefer-inline-snapshots':    'off',
 				'jest/prefer-spy-on':              'off',
 				'jest/prefer-strict-equal':        'error',
@@ -1089,6 +1093,7 @@ module.exports = {
 				'jest/valid-describe':             'error',
 				'jest/valid-expect':               ['error', { alwaysAwait: true }],
 				'jest/valid-expect-in-promise':    'error',
+				'jest/valid-title':                'error',
 
 				// https://github.com/dangreenisrael/eslint-plugin-jest-formatting#rule-documentation
 				'jest-formatting/padding-around-after-all-blocks':   'error',
