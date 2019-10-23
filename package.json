@@ -50,7 +50,7 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "2.2.0",
-    "eslint-plugin-unicorn": "10.0.0",
+    "eslint-plugin-unicorn": "12.1.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "6.8.0",
     "eslint-plugin-you-dont-need-momentjs": "1.5.0"
   },
