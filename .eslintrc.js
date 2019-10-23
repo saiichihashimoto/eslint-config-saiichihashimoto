@@ -105,6 +105,7 @@ module.exports = {
 		}],
 		'no-extra-semi':           'error',
 		'no-func-assign':          'error',
+		'no-import-assign':        'error',
 		'no-inner-declarations':   ['error', 'both'],
 		'no-invalid-regexp':       'error',
 		'no-irregular-whitespace': ['error', {
@@ -136,6 +137,7 @@ module.exports = {
 		'consistent-return':      ['error', { treatUndefinedAsUnspecified: true }],
 		'curly':                  ['error', 'all'],
 		'default-case':           'off',
+		'default-param-last':     'warn',
 		'dot-location':           ['error', 'property'],
 		'dot-notation':           'error',
 		'eqeqeq':                 ['error', 'always'],
@@ -221,6 +223,7 @@ module.exports = {
 		'no-with':                      'error',
 		'prefer-named-capture-group':   'off',
 		'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
+		'prefer-regex-literals':        'error',
 		'radix':                        'error',
 		'require-await':                'error',
 		'require-unicode-regexp':       'error',
