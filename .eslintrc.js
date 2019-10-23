@@ -1079,6 +1079,7 @@ module.exports = {
 				'jest/no-try-expect':              'error',
 				'jest/prefer-called-with':         'error',
 				'jest/prefer-expect-assertions':   'off',
+				'jest/prefer-hooks-on-top':        'error',
 				'jest/prefer-inline-snapshots':    'off',
 				'jest/prefer-spy-on':              'off',
 				'jest/prefer-strict-equal':        'error',
@@ -1092,6 +1093,7 @@ module.exports = {
 				'jest/valid-describe':             'error',
 				'jest/valid-expect':               ['error', { alwaysAwait: true }],
 				'jest/valid-expect-in-promise':    'error',
+				'jest/valid-title':                'error',
 
 				// https://github.com/dangreenisrael/eslint-plugin-jest-formatting#rule-documentation
 				'jest-formatting/padding-around-after-all-blocks':   'error',
