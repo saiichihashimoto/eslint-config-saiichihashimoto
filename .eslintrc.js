@@ -1106,21 +1106,12 @@ module.exports = {
 				// https://github.com/dangreenisrael/eslint-plugin-jest-formatting#rule-documentation
 				'jest-formatting/padding-around-after-all-blocks':   'error',
 				'jest-formatting/padding-around-after-each-blocks':  'error',
+				'jest-formatting/padding-around-all':                'error',
 				'jest-formatting/padding-around-before-all-blocks':  'error',
 				'jest-formatting/padding-around-before-each-blocks': 'error',
-				'jest-formatting/padding-around-expect-groups':      'error',
 				'jest-formatting/padding-around-describe-blocks':    'error',
+				'jest-formatting/padding-around-expect-groups':      'error',
 				'jest-formatting/padding-around-test-blocks':        'error',
-
-				// https://github.com/dangreenisrael/eslint-plugin-jest-formatting#deprecated
-				'jest-formatting/padding-before-after-all-blocks':   'off',
-				'jest-formatting/padding-before-after-each-blocks':  'off',
-				'jest-formatting/padding-before-all':                'off',
-				'jest-formatting/padding-before-before-all-blocks':  'off',
-				'jest-formatting/padding-before-before-each-blocks': 'off',
-				'jest-formatting/padding-before-describe-blocks':    'off',
-				'jest-formatting/padding-before-expect-statements':  'off',
-				'jest-formatting/padding-before-test-blocks':        'off',
 			},
 		},
 	],
