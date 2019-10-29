@@ -9,6 +9,7 @@ notifications:
       - saiichihashimoto@gmail.com
     on_success: never
     on_failure: always
+script: npm test && npx lint-my-app lint
 jobs:
   include:
     - stage: test
