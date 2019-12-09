@@ -59,7 +59,7 @@
     "eslint": "6.6.0",
     "eslint-find-rules": "3.4.0",
     "husky": "3.1.0",
-    "lint-my-app": "3.7.33",
+    "lint-my-app": "3.7.34",
     "npm-run-all": "4.1.5",
     "react": "16.12.0"
   },
