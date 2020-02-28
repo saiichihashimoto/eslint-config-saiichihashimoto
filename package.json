@@ -39,7 +39,7 @@
     }
   },
   "dependencies": {
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.1.0",
     "confusing-browser-globals": "1.0.9",
     "eslint-plugin-css-modules": "2.11.0",
     "eslint-plugin-import": "2.20.1",
