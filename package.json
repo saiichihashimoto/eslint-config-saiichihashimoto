@@ -31,7 +31,9 @@
     "pretest:exit-code-1": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
     "test:exit-code-1": "for i in fail/*.js; do echo \"eslint --color $i\" should fail; ! eslint $i; done",
     "posttest:exit-code-1": "rm fail/*.js",
-    "test:find-rules": "eslint-find-rules --deprecated --unused .eslintrc.js"
+    "test:find-rules": "eslint-find-rules --deprecated --unused .eslintrc.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "config": {
     "commitizen": {
@@ -52,7 +54,8 @@
     "eslint-plugin-react-hooks": "2.5.0",
     "eslint-plugin-unicorn": "15.0.1",
     "eslint-plugin-you-dont-need-lodash-underscore": "6.9.0",
-    "eslint-plugin-you-dont-need-momentjs": "1.5.0"
+    "eslint-plugin-you-dont-need-momentjs": "1.5.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.1.0",
@@ -68,5 +71,6 @@
   },
   "engines": {
     "node": "12.8.0"
-  }
+  },
+  "snyk": true
 }
