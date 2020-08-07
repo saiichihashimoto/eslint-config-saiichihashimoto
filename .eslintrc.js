@@ -1124,5 +1124,17 @@ module.exports = {
 				'jest-formatting/padding-around-test-blocks':        'error',
 			},
 		},
+		{
+			files: [
+				'*.ts',
+				'*.tsx',
+			],
+			plugins: [
+				'@typescript-eslint',
+			],
+			extends: [
+				'plugin:@typescript-eslint/recommended',
+			],
+		},
 	],
 };
