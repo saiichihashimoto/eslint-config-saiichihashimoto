@@ -1178,7 +1178,7 @@ module.exports = {
 				'@typescript-eslint/member-delimiter-style':                 'error',
 				'@typescript-eslint/member-ordering':                        'error',
 				'@typescript-eslint/method-signature-style':                 'error',
-				'@typescript-eslint/naming-convention':                      'error',
+				'@typescript-eslint/naming-convention':                      'off',
 				'@typescript-eslint/no-array-constructor':                   'error',
 				'@typescript-eslint/no-base-to-string':                      'error',
 				'@typescript-eslint/no-confusing-non-null-assertion':        'error',
