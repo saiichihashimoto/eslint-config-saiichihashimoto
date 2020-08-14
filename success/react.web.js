@@ -4,12 +4,12 @@ import React from 'react';
 import OtherComponent from './other';
 import styles from './react.module.css';
 
-export default function Component() {
-	return (
-		<div className={styles.aClassName}>
-			<span />
-			<OtherComponent />
-			Hello World
-		</div>
-	);
-}
+const Component = () => (
+	<div className={styles.aClassName}>
+		<span />
+		<OtherComponent />
+		Hello World
+	</div>
+);
+
+export default Component;
