@@ -1235,7 +1235,7 @@ module.exports = {
 				'@typescript-eslint/return-await':                           'error',
 				'@typescript-eslint/semi':                                   semi,
 				'@typescript-eslint/space-before-function-paren':            spaceBeforeFunctionParen,
-				'@typescript-eslint/strict-boolean-expressions':             'error',
+				'@typescript-eslint/strict-boolean-expressions':             'off',
 				'@typescript-eslint/switch-exhaustiveness-check':            'error',
 				'@typescript-eslint/triple-slash-reference':                 'error',
 				'@typescript-eslint/type-annotation-spacing':                'error',
