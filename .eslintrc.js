@@ -252,7 +252,7 @@ module.exports = {
 		'no-useless-concat':            'error',
 		'no-useless-escape':            'error',
 		'no-useless-return':            'error',
-		'no-void':                      'error',
+		'no-void':                      ['error', { allowAsStatement: true }],
 		'no-warning-comments':          'off',
 		'no-with':                      'error',
 		'prefer-named-capture-group':   'off',
@@ -593,7 +593,7 @@ module.exports = {
 		'import/no-duplicates':               'error',
 		'import/no-named-default':            'error',
 		'import/no-named-export':             'off',
-		'import/no-namespace':                'error',
+		'import/no-namespace':                'off',
 		'import/no-unassigned-import':        'off',
 		'import/order':                       ['error', {
 			'groups':           ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
@@ -1245,6 +1245,7 @@ module.exports = {
 				'@typescript-eslint/unified-signatures':                     'error',
 				'brace-style':                                               'off',
 				'comma-spacing':                                             'off',
+				'consistent-return':                                         'off',
 				'constructor-super':                                         'off', // ts(2335) & ts(2377)
 				'default-param-last':                                        'off',
 				'dot-notation':                                              'off',
