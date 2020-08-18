@@ -1,3 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-module.exports = require('lint-my-app/husky');
+module.exports = {
+	hooks: {
+		'pre-commit': require('husky-config-saiichihashimoto')['pre-commit']
+	}
+};
