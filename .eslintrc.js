@@ -257,7 +257,7 @@ module.exports = {
 		'no-useless-concat':            'error',
 		'no-useless-escape':            'error',
 		'no-useless-return':            'error',
-		'no-void':                      'error',
+		'no-void':                      ['error', { allowAsStatement: true }],
 		'no-warning-comments':          'off',
 		'no-with':                      'error',
 		'prefer-named-capture-group':   'off',
@@ -364,7 +364,7 @@ module.exports = {
 		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
 		'no-multi-assign':          'error',
 		'no-multiple-empty-lines':  ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-		'no-negated-condition':     'error',
+		'no-negated-condition':     'off',
 		'no-nested-ternary':        'off',
 		'no-new-object':            'error',
 		'no-plusplus':              ['error', { allowForLoopAfterthoughts: true }],
@@ -588,7 +588,7 @@ module.exports = {
 		'import/no-duplicates':               'error',
 		'import/no-named-default':            'error',
 		'import/no-named-export':             'off',
-		'import/no-namespace':                'error',
+		'import/no-namespace':                'off',
 		'import/no-unassigned-import':        'off',
 		'import/order':                       ['error', {
 			'groups':           ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
@@ -1283,6 +1283,9 @@ module.exports = {
 				'semi':                                                      'off',
 				'space-before-function-paren':                               'off',
 				'valid-typeof':                                              'off', // ts(2367)
+
+				// https://github.com/evcohen/eslint-plugin-jsx-a11y
+				'jsx-a11y/anchor-is-valid': 'off',
 			},
 		},
 	],
