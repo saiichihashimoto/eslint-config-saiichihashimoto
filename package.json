@@ -66,6 +66,9 @@
     "react": "16.13.1",
     "typescript": "3.9.7"
   },
+  "peerDependencies": {
+    "eslint": "^7.7.0"
+  },
   "engines": {
     "node": "12.8.0"
   }
