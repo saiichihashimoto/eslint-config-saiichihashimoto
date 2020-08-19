@@ -680,12 +680,16 @@ module.exports = {
 		'jsx-a11y/tabindex-no-positive':         'error',
 
 		// https://github.com/mysticatea/eslint-plugin-node#possible-errors
+		'node/handle-callback-err':                   'warn',
 		'node/no-callback-literal':                   'error',
 		'node/no-exports-assign':                     'error',
 		'node/no-extraneous-import':                  'off',
 		'node/no-extraneous-require':                 'off',
 		'node/no-missing-import':                     'off',
 		'node/no-missing-require':                    'off',
+		'node/no-new-require':                        'off',
+		'node/no-path-concat':                        'error',
+		'node/no-process-exit':                       'off',
 		'node/no-unpublished-bin':                    'off',
 		'node/no-unpublished-import':                 'off',
 		'node/no-unpublished-require':                'off',
@@ -703,8 +707,15 @@ module.exports = {
 		'node/no-deprecated-api': 'error',
 
 		// https://github.com/mysticatea/eslint-plugin-node#stylistic-issues
+		'node/callback-return':                 'off',
 		'node/exports-style':                   ['error', 'module.exports'],
 		'node/file-extension-in-import':        'off',
+		'node/global-require':                  'off',
+		'node/no-mixed-requires':               'off',
+		'node/no-process-env':                  'off',
+		'node/no-restricted-import':            'off',
+		'node/no-restricted-require':           'off',
+		'node/no-sync':                         'warn',
 		'node/prefer-global/buffer':            'off',
 		'node/prefer-global/console':           'off',
 		'node/prefer-global/process':           'off',
