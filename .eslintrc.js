@@ -1057,6 +1057,7 @@ module.exports = {
 				'jest-formatting',
 			],
 			rules: {
+				'fp/no-unused-expression':                           'off',
 				'jest-formatting/padding-around-after-all-blocks':   'error',
 				'jest-formatting/padding-around-after-each-blocks':  'error',
 				'jest-formatting/padding-around-all':                'error',
