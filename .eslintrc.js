@@ -144,7 +144,7 @@ module.exports = {
 		'complexity':                            'off',
 		'computed-property-spacing':             ['error', 'never'],
 		'config-files/order-options':            'error',
-		'consistent-return':                     ['error', { treatUndefinedAsUnspecified: true }],
+		'consistent-return':                     'off',
 		'consistent-this':                       'off',
 		'constructor-super':                     'error',
 		'curly':                                 ['error', 'all'],
