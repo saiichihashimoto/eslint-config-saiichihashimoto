@@ -38,12 +38,39 @@ const semi = ['error', 'always'];
 const spaceBeforeFunctionParen = ['error', { anonymous: 'never', asyncArrow: 'always', named: 'never' }];
 
 module.exports = {
+	env: {
+		es6:  true,
+		node: true,
+	},
+	globals: {
+		process: 'readonly',
+	},
 	parser:        'babel-eslint',
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true,
 		},
 	},
+	plugins: [
+		'config-files',
+		'eslint-comments',
+		'fp',
+		'import',
+		'jsx-a11y',
+		'lodash-fp',
+		'no-secrets',
+		'node',
+		'promise',
+		'react',
+		'react-hooks',
+		'unicorn',
+		'you-dont-need-lodash-underscore',
+		'you-dont-need-momentjs',
+	],
+	extends: [
+		'plugin:you-dont-need-lodash-underscore/all',
+		'plugin:you-dont-need-momentjs/recommended',
+	],
 	settings: {
 		'react': {
 			version: 'detect',
@@ -90,32 +117,6 @@ module.exports = {
 			},
 		},
 	},
-	env: {
-		es6:  true,
-		node: true,
-	},
-	globals: {
-		process: 'readonly',
-	},
-	extends: [
-		'plugin:you-dont-need-lodash-underscore/all',
-		'plugin:you-dont-need-momentjs/recommended',
-	],
-	plugins: [
-		'eslint-comments',
-		'fp',
-		'import',
-		'jsx-a11y',
-		'lodash-fp',
-		'no-secrets',
-		'node',
-		'promise',
-		'react',
-		'react-hooks',
-		'unicorn',
-		'you-dont-need-lodash-underscore',
-		'you-dont-need-momentjs',
-	],
 	rules: {
 		'accessor-pairs':         'off',
 		'array-bracket-newline':  ['error', 'consistent'],
@@ -142,6 +143,7 @@ module.exports = {
 		'comma-style':                           ['error', 'last'],
 		'complexity':                            'off',
 		'computed-property-spacing':             ['error', 'never'],
+		'config-files/order-options':            'error',
 		'consistent-return':                     ['error', { treatUndefinedAsUnspecified: true }],
 		'consistent-this':                       'off',
 		'constructor-super':                     'error',
