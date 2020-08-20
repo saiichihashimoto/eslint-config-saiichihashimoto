@@ -171,7 +171,7 @@ module.exports = {
 		'fp/no-loops':                           'error',
 		'fp/no-mutating-assign':                 'error',
 		'fp/no-mutating-methods':                'error',
-		'fp/no-mutation':                        'error',
+		'fp/no-mutation':                        ['error', { commonjs: true }],
 		'fp/no-nil':                             'off',
 		'fp/no-proxy':                           'error',
 		'fp/no-rest-parameters':                 'warn',
