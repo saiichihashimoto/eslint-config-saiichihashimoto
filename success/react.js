@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies -- It's part of the tests */
 import React from 'react';
 
 const Component = () => (

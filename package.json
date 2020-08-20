@@ -26,7 +26,7 @@
   "license": "MIT",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "run-p --continue-on-error test:*",
+    "test": "run-s test:*",
     "test:exit-code-0": "eslint --color success",
     "pretest:exit-code-1": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
     "test:exit-code-1": "for i in fail/*.js; do echo \"eslint --color $i\" should fail; ! eslint $i; done",
@@ -45,6 +45,7 @@
     "confusing-browser-globals": "1.0.9",
     "eslint": "7.7.0",
     "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "23.20.0",
