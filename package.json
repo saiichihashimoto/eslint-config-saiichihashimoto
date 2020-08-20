@@ -26,7 +26,7 @@
   "license": "MIT",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "run-s test:*",
+    "test": "run-p --continue-on-error test:*",
     "test:exit-code-0": "eslint --color success",
     "pretest:exit-code-1": "rm -f fail/*.js && for i in fail/*; do cp $i $i.js; done",
     "test:exit-code-1": "for i in fail/*.js; do echo \"eslint --color $i\" should fail; ! eslint $i; done",
