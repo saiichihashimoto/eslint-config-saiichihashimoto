@@ -105,6 +105,7 @@ module.exports = {
 		'fp',
 		'import',
 		'jsx-a11y',
+		'no-secrets',
 		'node',
 		'promise',
 		'react',
@@ -113,7 +114,6 @@ module.exports = {
 		'you-dont-need-lodash-underscore',
 		'you-dont-need-momentjs',
 	],
-
 	rules: {
 		'accessor-pairs':         'off',
 		'array-bracket-newline':  ['error', 'consistent'],
@@ -510,6 +510,7 @@ module.exports = {
 		'no-return-assign':            ['error', 'always'],
 		'no-return-await':             'error',
 		'no-script-url':               'error',
+		'no-secrets/no-secrets':       'warn',
 		'no-self-assign':              'error',
 		'no-self-compare':             'error',
 		'no-sequences':                'error',
