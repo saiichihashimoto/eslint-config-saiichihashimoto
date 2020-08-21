@@ -1179,7 +1179,7 @@ module.exports = {
 				'@typescript-eslint/no-dynamic-delete':                      'error',
 				'@typescript-eslint/no-empty-function':                      noEmptyFunction,
 				'@typescript-eslint/no-empty-interface':                     'error',
-				'@typescript-eslint/no-explicit-any':                        'error',
+				'@typescript-eslint/no-explicit-any':                        'warn',
 				'@typescript-eslint/no-extra-non-null-assertion':            'error',
 				'@typescript-eslint/no-extra-parens':                        noExtraParens,
 				'@typescript-eslint/no-extra-semi':                          'error',
