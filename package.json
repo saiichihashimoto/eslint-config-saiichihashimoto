@@ -63,7 +63,7 @@
     "eslint-plugin-you-dont-need-momentjs": "1.6.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "3.2.0",
+    "cz-conventional-changelog": "3.2.1",
     "eslint-find-rules": "3.6.0",
     "husky": "4.2.5",
     "husky-config-saiichihashimoto": "1.2.1",
