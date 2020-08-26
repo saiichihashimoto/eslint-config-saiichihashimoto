@@ -9,3 +9,7 @@ updates:
   labels:
     - "dependencies"
     - "automerge"
+  commit_message:
+    prefix: "fix"
+    prefix_development: "chore"
+    include_scope: true
