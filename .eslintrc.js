@@ -177,7 +177,7 @@ module.exports = {
 		'fp/no-mutation':                        ['error', { commonjs: true }],
 		'fp/no-nil':                             'off',
 		'fp/no-proxy':                           'error',
-		'fp/no-rest-parameters':                 'warn',
+		'fp/no-rest-parameters':                 'off',
 		'fp/no-this':                            'error',
 		'fp/no-throw':                           'off',
 		'fp/no-unused-expression':               'off',
