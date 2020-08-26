@@ -180,7 +180,7 @@ module.exports = {
 		'fp/no-rest-parameters':                 'warn',
 		'fp/no-this':                            'error',
 		'fp/no-throw':                           'off',
-		'fp/no-unused-expression':               'warn',
+		'fp/no-unused-expression':               'off',
 		'fp/no-valueof-field':                   'warn',
 		'func-call-spacing':                     funcCallSpacing,
 		'func-name-matching':                    ['error', 'always'],
@@ -1081,7 +1081,6 @@ module.exports = {
 				'jest-formatting',
 			],
 			rules: {
-				'fp/no-unused-expression':                           'off',
 				'jest-formatting/padding-around-after-all-blocks':   'error',
 				'jest-formatting/padding-around-after-each-blocks':  'error',
 				'jest-formatting/padding-around-all':                'error',
