@@ -61,6 +61,7 @@ module.exports = {
 		'no-secrets',
 		'no-use-extend-native',
 		'node',
+		'optimize-regex',
 		'promise',
 		'react',
 		'react-hooks',
@@ -654,6 +655,7 @@ module.exports = {
 		'one-var-declaration-per-line':    ['error', 'always'],
 		'operator-assignment':             ['error', 'always'],
 		'operator-linebreak':              ['error', 'before', { overrides: { '=': 'none' } }],
+		'optimize-regex/optimize-regex':   'error',
 		'padded-blocks':                   ['error', 'never'],
 		'padding-line-between-statements': [
 			'error',
