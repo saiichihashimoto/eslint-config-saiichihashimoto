@@ -3,33 +3,55 @@ const confusingBrowserGlobals = require('confusing-browser-globals');
 const braceStyle = ['error', '1tbs', { allowSingleLine: true }];
 const commaSpacing = ['error', { after: true, before: false }];
 const funcCallSpacing = ['error', 'never'];
-const indent = ['error', 'tab', {
-	ArrayExpression:     1,
-	CallExpression:      { arguments: 1 },
-	FunctionDeclaration: {
-		body:       1,
-		parameters: 1,
+const indent = [
+	'error',
+	'tab',
+	{
+		ArrayExpression:     1,
+		CallExpression:      { arguments: 1 },
+		FunctionDeclaration: {
+			body:       1,
+			parameters: 1,
+		},
+		ImportDeclaration:      1,
+		MemberExpression:       1,
+		ObjectExpression:       1,
+		SwitchCase:             1,
+		VariableDeclarator:     'first',
+		flatTernaryExpressions: true,
+		ignoreComments:         false,
+		ignoredNodes:           [
+			'JSXElement',
+			'JSXElement > *',
+			'JSXAttribute',
+			'JSXIdentifier',
+			'JSXNamespacedName',
+			'JSXMemberExpression',
+			'JSXSpreadAttribute',
+			'JSXExpressionContainer',
+			'JSXOpeningElement',
+			'JSXClosingElement',
+			'JSXText',
+			'JSXEmptyExpression',
+			'JSXSpreadChild',
+		],
+		outerIIFEBody: 1,
 	},
-	ImportDeclaration:      1,
-	MemberExpression:       1,
-	ObjectExpression:       1,
-	SwitchCase:             1,
-	VariableDeclarator:     'first',
-	flatTernaryExpressions: true,
-	ignoreComments:         false,
-	ignoredNodes:           ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
-	outerIIFEBody:          1,
-}];
+];
 const keywordSpacing = ['error', { after: true, before: true }];
-const linesBetweenClassMembers = ['error', 'never'];
 const noEmptyFunction = ['error', { allow: ['arrowFunctions', 'methods'] }];
-const noExtraParens = ['error', 'all', {
-	conditionalAssign:           false,
-	enforceForArrowConditionals: false,
-	ignoreJSX:                   'multi-line',
-	nestedBinaryExpressions:     false,
-	returnAssign:                false,
-}];
+const linesBetweenClassMembers = ['error', 'never'];
+const noExtraParens = [
+	'error',
+	'all',
+	{
+		conditionalAssign:           false,
+		enforceForArrowConditionals: false,
+		ignoreJSX:                   'multi-line',
+		nestedBinaryExpressions:     false,
+		returnAssign:                false,
+	},
+];
 const noUnusedExpressions = ['error', { allowShortCircuit: false, allowTaggedTemplates: false, allowTernary: false }];
 const noUnusedVars = ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }];
 const noUseBeforeDefine = ['error', { functions: true, classes: true, variables: true }];
@@ -94,9 +116,7 @@ module.exports = {
 		],
 		'import/resolver': {
 			node: {
-				paths: [
-					'src',
-				],
+				paths:      ['src'],
 				extensions: [
 					'.node.mjs',
 					'.web.mjs',
@@ -121,7 +141,7 @@ module.exports = {
 	},
 	rules: {
 		'accessor-pairs':         'off',
-		'array-bracket-newline':  ['error', 'consistent'],
+		'array-bracket-newline':  ['error', { multiline: true }],
 		'array-bracket-spacing':  ['error', 'never'],
 		'array-callback-return':  'error',
 		'array-element-newline':  ['error', 'consistent'],
@@ -134,13 +154,16 @@ module.exports = {
 		'camelcase':              ['error', { properties: 'always' }],
 		'capitalized-comments':   'off',
 		'class-methods-use-this': 'warn',
-		'comma-dangle':           ['error', {
-			arrays:    'always-multiline',
-			exports:   'always-multiline',
-			functions: 'never',
-			imports:   'always-multiline',
-			objects:   'always-multiline',
-		}],
+		'comma-dangle':           [
+			'error',
+			{
+				arrays:    'always-multiline',
+				exports:   'always-multiline',
+				functions: 'never',
+				imports:   'always-multiline',
+				objects:   'always-multiline',
+			},
+		],
 		'comma-spacing':                         commaSpacing,
 		'comma-style':                           ['error', 'last'],
 		'complexity':                            'off',
@@ -202,21 +225,25 @@ module.exports = {
 		'import/dynamic-import-chunkname':       'off',
 		'import/export':                         'error',
 		'import/exports-last':                   'error',
-		'import/extensions':                     ['error', 'always', {
-			'node.mjs': 'never',
-			'web.mjs':  'never',
-			'mjs':      'never',
-			'node.js':  'never',
-			'web.js':   'never',
-			'js':       'never',
-			'ts':       'never',
-			'tsx':      'never',
-			'json':     'never',
-			'node.jsx': 'never',
-			'web.jsx':  'never',
-			'jsx':      'never',
-			'node':     'never',
-		}],
+		'import/extensions':                     [
+			'error',
+			'always',
+			{
+				'node.mjs': 'never',
+				'web.mjs':  'never',
+				'mjs':      'never',
+				'node.js':  'never',
+				'web.js':   'never',
+				'js':       'never',
+				'ts':       'never',
+				'tsx':      'never',
+				'json':     'never',
+				'node.jsx': 'never',
+				'web.jsx':  'never',
+				'jsx':      'never',
+				'node':     'never',
+			},
+		],
 		'import/first':                       'error',
 		'import/group-exports':               'off',
 		'import/max-dependencies':            'off',
@@ -232,31 +259,34 @@ module.exports = {
 		'import/no-deprecated':               'warn',
 		'import/no-duplicates':               'error',
 		'import/no-dynamic-require':          'error',
-		'import/no-extraneous-dependencies':  ['error', {
-			devDependencies: [
-				'**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
-				'**/Gruntfile{,.js}', // grunt config
-				'**/__mocks__/**', // jest pattern
-				'**/__tests__/**', // jest pattern
-				'**/gulpfile.*.js', // gulp config
-				'**/gulpfile.js', // gulp config
-				'**/jest.config.js', // jest config
-				'**/jest.setup.js', // jest setup
-				'**/protractor.conf.*.js', // protractor config
-				'**/protractor.conf.js', // protractor config
-				'**/rollup.config.*.js', // rollup config
-				'**/rollup.config.js', // rollup config
-				'**/vue.config.js', // vue-cli config
-				'**/webpack.config.*.js', // webpack config
-				'**/webpack.config.js', // webpack config
-				'spec/**', // mocha, rspec-like pattern
-				'test-*.{js,jsx}', // repos with multiple top-level test files
-				'test.{js,jsx}', // repos with a single test file
-				'test/**', // tape, common npm pattern
-				'tests/**', // also common npm pattern
-			],
-			optionalDependencies: false,
-		}],
+		'import/no-extraneous-dependencies':  [
+			'error',
+			{
+				devDependencies: [
+					'**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
+					'**/Gruntfile{,.js}', // grunt config
+					'**/__mocks__/**', // jest pattern
+					'**/__tests__/**', // jest pattern
+					'**/gulpfile.*.js', // gulp config
+					'**/gulpfile.js', // gulp config
+					'**/jest.config.js', // jest config
+					'**/jest.setup.js', // jest setup
+					'**/protractor.conf.*.js', // protractor config
+					'**/protractor.conf.js', // protractor config
+					'**/rollup.config.*.js', // rollup config
+					'**/rollup.config.js', // rollup config
+					'**/vue.config.js', // vue-cli config
+					'**/webpack.config.*.js', // webpack config
+					'**/webpack.config.js', // webpack config
+					'spec/**', // mocha, rspec-like pattern
+					'test-*.{js,jsx}', // repos with multiple top-level test files
+					'test.{js,jsx}', // repos with a single test file
+					'test/**', // tape, common npm pattern
+					'tests/**', // also common npm pattern
+				],
+				optionalDependencies: false,
+			},
+		],
 		'import/no-internal-modules':        'off',
 		'import/no-mutable-exports':         'error',
 		'import/no-named-as-default':        'error',
@@ -273,28 +303,44 @@ module.exports = {
 		'import/no-unused-modules':          'off',
 		'import/no-useless-path-segments':   'error',
 		'import/no-webpack-loader-syntax':   'error',
-		'import/order':                      ['error', {
-			'groups':           ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-			'newlines-between': 'always',
-		}],
+		'import/order':                      [
+			'error',
+			{
+				'groups': [
+					'builtin',
+					'external',
+					'internal',
+					'parent',
+					'sibling',
+					'index',
+				],
+				'newlines-between': 'always',
+			},
+		],
 		'import/prefer-default-export': 'off',
 		'import/unambiguous':           'off',
 		'indent':                       indent,
 		'init-declarations':            'off',
 		'jsx-a11y/accessible-emoji':    'error',
-		'jsx-a11y/alt-text':            ['error', {
-			'elements':            ['img', 'object', 'area', 'input[type="image"]'],
-			'area':                [],
-			'img':                 [],
-			'input[type="image"]': [],
-			'object':              [],
-		}],
+		'jsx-a11y/alt-text':            [
+			'error',
+			{
+				'elements':            ['img', 'object', 'area', 'input[type="image"]'],
+				'area':                [],
+				'img':                 [],
+				'input[type="image"]': [],
+				'object':              [],
+			},
+		],
 		'jsx-a11y/anchor-has-content': ['error', { components: ['Link'] }],
-		'jsx-a11y/anchor-is-valid':    ['error', {
-			aspects:     ['noHref', 'invalidHref', 'preferButton'],
-			components:  ['Link'],
-			specialLink: ['to'],
-		}],
+		'jsx-a11y/anchor-is-valid':    [
+			'error',
+			{
+				aspects:     ['noHref', 'invalidHref', 'preferButton'],
+				components:  ['Link'],
+				specialLink: ['to'],
+			},
+		],
 		'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
 		'jsx-a11y/aria-props':                         'error',
 		'jsx-a11y/aria-proptypes':                     'error',
@@ -308,13 +354,16 @@ module.exports = {
 		'jsx-a11y/iframe-has-title':                   'error',
 		'jsx-a11y/img-redundant-alt':                  'warn',
 		'jsx-a11y/interactive-supports-focus':         'error',
-		'jsx-a11y/label-has-associated-control':       ['error', {
-			assert:            'either',
-			controlComponents: [],
-			depth:             25,
-			labelAttributes:   [],
-			labelComponents:   [],
-		}],
+		'jsx-a11y/label-has-associated-control':       [
+			'error',
+			{
+				assert:            'either',
+				controlComponents: [],
+				depth:             25,
+				labelAttributes:   [],
+				labelComponents:   [],
+			},
+		],
 		'jsx-a11y/lang':                                          'error',
 		'jsx-a11y/media-has-caption':                             ['error', { audio: [], video: [], track: [] }],
 		'jsx-a11y/mouse-events-have-key-events':                  'error',
@@ -322,64 +371,79 @@ module.exports = {
 		'jsx-a11y/no-autofocus':                                  'warn',
 		'jsx-a11y/no-distracting-elements':                       ['error', { elements: ['marquee', 'blink'] }],
 		'jsx-a11y/no-interactive-element-to-noninteractive-role': ['error', { tr: ['none', 'presentation'] }],
-		'jsx-a11y/no-noninteractive-element-interactions':        ['error', {
-			handlers: [
-				'onClick',
-				'onKeyDown',
-				'onKeyPress',
-				'onKeyUp',
-				'onMouseDown',
-				'onMouseUp',
-			],
-		}],
-		'jsx-a11y/no-noninteractive-element-to-interactive-role': ['error', {
-			li:    ['menuitem', 'option', 'row', 'tab', 'treeitem'],
-			ol:    ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
-			table: ['grid'],
-			td:    ['gridcell'],
-			ul:    ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
-		}],
+		'jsx-a11y/no-noninteractive-element-interactions':        [
+			'error',
+			{
+				handlers: [
+					'onClick',
+					'onKeyDown',
+					'onKeyPress',
+					'onKeyUp',
+					'onMouseDown',
+					'onMouseUp',
+				],
+			},
+		],
+		'jsx-a11y/no-noninteractive-element-to-interactive-role': [
+			'error',
+			{
+				li:    ['menuitem', 'option', 'row', 'tab', 'treeitem'],
+				ol:    ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
+				table: ['grid'],
+				td:    ['gridcell'],
+				ul:    ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
+			},
+		],
 		'jsx-a11y/no-noninteractive-tabindex':     ['error', { roles: ['tabpanel'], tags: [] }],
 		'jsx-a11y/no-onchange':                    'warn',
 		'jsx-a11y/no-redundant-roles':             'error',
-		'jsx-a11y/no-static-element-interactions': ['error', {
-			handlers: [
-				'onClick',
-				'onMouseDown',
-				'onMouseUp',
-				'onKeyPress',
-				'onKeyDown',
-				'onKeyUp',
-			],
-		}],
+		'jsx-a11y/no-static-element-interactions': [
+			'error',
+			{
+				handlers: [
+					'onClick',
+					'onMouseDown',
+					'onMouseUp',
+					'onKeyPress',
+					'onKeyDown',
+					'onKeyUp',
+				],
+			},
+		],
 		'jsx-a11y/role-has-required-aria-props': 'error',
 		'jsx-a11y/role-supports-aria-props':     'error',
 		'jsx-a11y/scope':                        'error',
 		'jsx-a11y/tabindex-no-positive':         'error',
 		'jsx-quotes':                            ['error', 'prefer-double'],
-		'key-spacing':                           ['error', {
-			afterColon:  true,
-			align:       'value',
-			beforeColon: false,
-			mode:        'strict',
-		}],
+		'key-spacing':                           [
+			'error',
+			{
+				afterColon:  true,
+				align:       'value',
+				beforeColon: false,
+				mode:        'strict',
+			},
+		],
 		'keyword-spacing':       keywordSpacing,
 		'line-comment-position': 'off',
 		'linebreak-style':       ['error', 'unix'],
-		'lines-around-comment':  ['error', {
-			afterBlockComment:  true,
-			afterLineComment:   false,
-			allowArrayEnd:      true,
-			allowArrayStart:    true,
-			allowBlockEnd:      true,
-			allowBlockStart:    true,
-			allowClassEnd:      true,
-			allowClassStart:    true,
-			allowObjectEnd:     true,
-			allowObjectStart:   true,
-			beforeBlockComment: true,
-			beforeLineComment:  false,
-		}],
+		'lines-around-comment':  [
+			'error',
+			{
+				afterBlockComment:  true,
+				afterLineComment:   false,
+				allowArrayEnd:      true,
+				allowArrayStart:    true,
+				allowBlockEnd:      true,
+				allowBlockStart:    true,
+				allowClassEnd:      true,
+				allowClassStart:    true,
+				allowObjectEnd:     true,
+				allowObjectStart:   true,
+				beforeBlockComment: true,
+				beforeLineComment:  false,
+			},
+		],
 		'lines-between-class-members':               linesBetweenClassMembers,
 		'lodash-fp/consistent-compose':              ['warn', 'flow'],
 		'lodash-fp/consistent-name':                 ['warn', '_'],
@@ -413,12 +477,15 @@ module.exports = {
 		'max-statements-per-line':                   ['error', { max: 1 }],
 		'multiline-comment-style':                   ['error', 'starred-block'],
 		'multiline-ternary':                         ['error', 'always-multiline'],
-		'new-cap':                                   ['error', {
-			capIsNew:           false,
-			capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
-			newIsCap:           true,
-			newIsCapExceptions: [],
-		}],
+		'new-cap':                                   [
+			'error',
+			{
+				capIsNew:           false,
+				capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
+				newIsCap:           true,
+				newIsCapExceptions: [],
+			},
+		],
 		'new-parens':                'error',
 		'newline-per-chained-call':  'error',
 		'no-alert':                  'error',
@@ -473,12 +540,15 @@ module.exports = {
 		'no-inner-declarations':     ['error', 'both'],
 		'no-invalid-regexp':         'error',
 		'no-invalid-this':           'error',
-		'no-irregular-whitespace':   ['error', {
-			skipComments:  true,
-			skipRegExps:   true,
-			skipStrings:   true,
-			skipTemplates: true,
-		}],
+		'no-irregular-whitespace':   [
+			'error',
+			{
+				skipComments:  true,
+				skipRegExps:   true,
+				skipStrings:   true,
+				skipTemplates: true,
+			},
+		],
 		'no-iterator':                   'error',
 		'no-label-var':                  'error',
 		'no-labels':                     'error',
@@ -504,21 +574,24 @@ module.exports = {
 		'no-obj-calls':                  'error',
 		'no-octal':                      'error',
 		'no-octal-escape':               'error',
-		'no-param-reassign':             ['error', {
-			props:                          true,
-			ignorePropertyModificationsFor: [
-				'acc', // for reduce accumulators
-				'accumulator', // for reduce accumulators
-				'e', // for e.returnvalue
-				'ctx', // for Koa routing
-				'req', // for Express requests
-				'request', // for Express requests
-				'res', // for Express responses
-				'response', // for Express responses
-				'$scope', // for Angular 1 scopes
-				'staticContext', // for ReactRouter context
-			],
-		}],
+		'no-param-reassign':             [
+			'error',
+			{
+				props:                          true,
+				ignorePropertyModificationsFor: [
+					'acc', // for reduce accumulators
+					'accumulator', // for reduce accumulators
+					'e', // for e.returnvalue
+					'ctx', // for Koa routing
+					'req', // for Express requests
+					'request', // for Express requests
+					'res', // for Express responses
+					'response', // for Express responses
+					'$scope', // for Angular 1 scopes
+					'staticContext', // for ReactRouter context
+				],
+			},
+		],
 		'no-plusplus':                ['error', { allowForLoopAfterthoughts: true }],
 		'no-promise-executor-return': 'error',
 		'no-proto':                   'error',
@@ -528,7 +601,8 @@ module.exports = {
 		'no-restricted-exports':      'off',
 		'no-restricted-globals':      ['error', 'isFinite', 'isNaN'].concat(confusingBrowserGlobals),
 		'no-restricted-imports':      'off',
-		'no-restricted-properties':   ['error',
+		'no-restricted-properties':   [
+			'error',
 			{ object: 'arguments', property: 'callee', message: 'arguments.callee is deprecated' },
 			{ object: 'global', property: 'isFinite', message: 'Please use Number.isFinite instead' },
 			{ object: 'self', property: 'isFinite', message: 'Please use Number.isFinite instead' },
@@ -537,12 +611,15 @@ module.exports = {
 			{ object: 'self', property: 'isNaN', message: 'Please use Number.isNaN instead' },
 			{ object: 'window', property: 'isNaN', message: 'Please use Number.isNaN instead' },
 			{ property: '__defineGetter__', message: 'Please use Object.defineProperty instead.' },
-			{ property: '__defineSetter__', message: 'Please use Object.defineProperty instead.' }],
-		'no-restricted-syntax': ['error',
+			{ property: '__defineSetter__', message: 'Please use Object.defineProperty instead.' },
+		],
+		'no-restricted-syntax': [
+			'error',
 			{ selector: 'ForInStatement', message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.' },
 			{ selector: 'ForOfStatement', message: 'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.' },
 			{ selector: 'LabeledStatement', message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.' },
-			{ selector: 'WithStatement', message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.' }],
+			{ selector: 'WithStatement', message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.' },
+		],
 		'no-return-assign':            ['error', 'always'],
 		'no-return-await':             'error',
 		'no-script-url':               'error',
@@ -563,12 +640,15 @@ module.exports = {
 		'no-undef':                    'error',
 		'no-undef-init':               'error',
 		'no-undefined':                'off',
-		'no-underscore-dangle':        ['error', {
-			allow:                [],
-			allowAfterThis:       false,
-			allowAfterSuper:      false,
-			enforceInMethodNames: true,
-		}],
+		'no-underscore-dangle':        [
+			'error',
+			{
+				allow:                [],
+				allowAfterThis:       false,
+				allowAfterSuper:      false,
+				enforceInMethodNames: true,
+			},
+		],
 		'no-unexpected-multiline':                    'error',
 		'no-unmodified-loop-condition':               'error',
 		'no-unneeded-ternary':                        ['error', { defaultAssignment: false }],
@@ -631,26 +711,40 @@ module.exports = {
 		'node/prefer-promises/dns':                   'off',
 		'node/prefer-promises/fs':                    'off',
 		'node/process-exit-as-throw':                 'error',
-		'node/shebang':                               ['error', {
-			convertPath: { 'src/**/*': ['^src/(.+?)$', 'lib/$1'] },
-		}],
+		'node/shebang':                               [
+			'error',
+			{
+				convertPath: { 'src/**/*': ['^src/(.+?)$', 'lib/$1'] },
+			},
+		],
 		'nonblock-statement-body-position': 'off',
-		'object-curly-newline':             ['error', {
-			ExportDeclaration: 'always',
-			ImportDeclaration: { multiline: true, consistent: true },
-			ObjectExpression:  { multiline: true, consistent: true },
-			ObjectPattern:     { multiline: true, consistent: true },
-		}],
-		'object-curly-spacing': ['error', 'always', {
-			arraysInObjects:  true,
-			objectsInObjects: true,
-		}],
+		'object-curly-newline':             [
+			'error',
+			{
+				ExportDeclaration: 'always',
+				ImportDeclaration: { multiline: true, consistent: true },
+				ObjectExpression:  { multiline: true, consistent: true },
+				ObjectPattern:     { multiline: true, consistent: true },
+			},
+		],
+		'object-curly-spacing': [
+			'error',
+			'always',
+			{
+				arraysInObjects:  true,
+				objectsInObjects: true,
+			},
+		],
 		'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
-		'object-shorthand':        ['error', 'always', {
-			avoidExplicitReturnArrows: true,
-			avoidQuotes:               true,
-			ignoreConstructors:        false,
-		}],
+		'object-shorthand':        [
+			'error',
+			'always',
+			{
+				avoidExplicitReturnArrows: true,
+				avoidQuotes:               true,
+				ignoreConstructors:        false,
+			},
+		],
 		'one-var':                         ['error', 'never'],
 		'one-var-declaration-per-line':    ['error', 'always'],
 		'operator-assignment':             ['error', 'always'],
@@ -695,17 +789,22 @@ module.exports = {
 			{ blankLine: 'never', prev: 'default', next: '*' },
 			{ blankLine: 'never', prev: '*', next: 'default' },
 		],
-		'prefer-arrow-callback': ['error', {
-			allowNamedFunctions: false,
-			allowUnboundThis:    true,
-		}],
+		'prefer-arrow-callback': [
+			'error',
+			{
+				allowNamedFunctions: false,
+				allowUnboundThis:    true,
+			},
+		],
 		'prefer-const':         'error',
-		'prefer-destructuring': ['error',
+		'prefer-destructuring': [
+			'error',
 			{
 				VariableDeclarator:   { array: false, object: true },
 				AssignmentExpression: { array: false, object: false },
 			},
-			{ enforceForRenamedProperties: false }],
+			{ enforceForRenamedProperties: false },
+		],
 		'prefer-exponentiation-operator':       'error',
 		'prefer-named-capture-group':           'off',
 		'prefer-numeric-literals':              'error',
@@ -744,10 +843,13 @@ module.exports = {
 		'react/forbid-elements':                'off',
 		'react/forbid-foreign-prop-types':      'off',
 		'react/forbid-prop-types':              'off',
-		'react/function-component-definition':  ['error', {
-			namedComponents:   'arrow-function',
-			unnamedComponents: 'arrow-function',
-		}],
+		'react/function-component-definition':  [
+			'error',
+			{
+				namedComponents:   'arrow-function',
+				unnamedComponents: 'arrow-function',
+			},
+		],
 		'react/jsx-boolean-value':            ['error', 'never'],
 		'react/jsx-child-element-spacing':    'off',
 		'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
@@ -765,13 +867,16 @@ module.exports = {
 		'react/jsx-key':                      'error',
 		'react/jsx-max-depth':                'off',
 		'react/jsx-max-props-per-line':       ['error', { maximum: 1, when: 'multiline' }],
-		'react/jsx-no-bind':                  ['error', {
-			allowArrowFunctions: true,
-			allowBind:           false,
-			allowFunctions:      false,
-			ignoreDOMComponents: false,
-			ignoreRefs:          false,
-		}],
+		'react/jsx-no-bind':                  [
+			'error',
+			{
+				allowArrowFunctions: true,
+				allowBind:           false,
+				allowFunctions:      false,
+				ignoreDOMComponents: false,
+				ignoreRefs:          false,
+			},
+		],
 		'react/jsx-no-comment-textnodes':    'error',
 		'react/jsx-no-duplicate-props':      'error',
 		'react/jsx-no-literals':             'off',
@@ -784,31 +889,40 @@ module.exports = {
 		'react/jsx-props-no-multi-spaces':   'error',
 		'react/jsx-props-no-spreading':      'off',
 		'react/jsx-sort-default-props':      'error',
-		'react/jsx-sort-props':              ['off', {
-			callbacksLast:        true,
-			ignoreCase:           false,
-			noSortAlphabetically: true,
-			reservedFirst:        true,
-			shorthandFirst:       true,
-			shorthandLast:        false,
-		}],
-		'react/jsx-tag-spacing': ['error', {
-			afterOpening:      'never',
-			beforeClosing:     'never',
-			beforeSelfClosing: 'always',
-			closingSlash:      'never',
-		}],
+		'react/jsx-sort-props':              [
+			'off',
+			{
+				callbacksLast:        true,
+				ignoreCase:           false,
+				noSortAlphabetically: true,
+				reservedFirst:        true,
+				shorthandFirst:       true,
+				shorthandLast:        false,
+			},
+		],
+		'react/jsx-tag-spacing': [
+			'error',
+			{
+				afterOpening:      'never',
+				beforeClosing:     'never',
+				beforeSelfClosing: 'always',
+				closingSlash:      'never',
+			},
+		],
 		'react/jsx-uses-react':      'error',
 		'react/jsx-uses-vars':       'error',
-		'react/jsx-wrap-multilines': ['error', {
-			arrow:       'parens-new-line',
-			assignment:  'parens-new-line',
-			condition:   'parens-new-line',
-			declaration: 'parens-new-line',
-			logical:     'parens-new-line',
-			prop:        'parens-new-line',
-			return:      'parens-new-line',
-		}],
+		'react/jsx-wrap-multilines': [
+			'error',
+			{
+				arrow:       'parens-new-line',
+				assignment:  'parens-new-line',
+				condition:   'parens-new-line',
+				declaration: 'parens-new-line',
+				logical:     'parens-new-line',
+				prop:        'parens-new-line',
+				return:      'parens-new-line',
+			},
+		],
 		'react/no-access-state-in-setstate':          'error',
 		'react/no-adjacent-inline-elements':          'error',
 		'react/no-array-index-key':                   'error',
@@ -843,51 +957,57 @@ module.exports = {
 		'react/require-optimization':                 'off',
 		'react/require-render-return':                'error',
 		'react/self-closing-comp':                    'error',
-		'react/sort-comp':                            ['error', {
-			order: [
-				'static-methods',
-				'instance-variables',
-				'lifecycle',
-				'/^on.+$/',
-				'getters',
-				'setters',
-				'/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
-				'instance-methods',
-				'everything-else',
-				'rendering',
-			],
-			groups: {
-				lifecycle: [
-					'displayName',
-					'propTypes',
-					'contextTypes',
-					'childContextTypes',
-					'mixins',
-					'statics',
-					'defaultProps',
-					'constructor',
-					'getDefaultProps',
-					'getInitialState',
-					'state',
-					'getChildContext',
-					'componentWillMount',
-					'componentDidMount',
-					'componentWillReceiveProps',
-					'shouldComponentUpdate',
-					'componentWillUpdate',
-					'componentDidUpdate',
-					'componentWillUnmount',
+		'react/sort-comp':                            [
+			'error',
+			{
+				order: [
+					'static-methods',
+					'instance-variables',
+					'lifecycle',
+					'/^on.+$/',
+					'getters',
+					'setters',
+					'/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
+					'instance-methods',
+					'everything-else',
+					'rendering',
 				],
-				rendering: ['/^render.+$/', 'render'],
+				groups: {
+					lifecycle: [
+						'displayName',
+						'propTypes',
+						'contextTypes',
+						'childContextTypes',
+						'mixins',
+						'statics',
+						'defaultProps',
+						'constructor',
+						'getDefaultProps',
+						'getInitialState',
+						'state',
+						'getChildContext',
+						'componentWillMount',
+						'componentDidMount',
+						'componentWillReceiveProps',
+						'shouldComponentUpdate',
+						'componentWillUpdate',
+						'componentDidUpdate',
+						'componentWillUnmount',
+					],
+					rendering: ['/^render.+$/', 'render'],
+				},
 			},
-		}],
-		'react/sort-prop-types': ['error', {
-			callbacksLast:        true,
-			ignoreCase:           false,
-			noSortAlphabetically: false,
-			requiredFirst:        true,
-			sortShapeProp:        true,
-		}],
+		],
+		'react/sort-prop-types': [
+			'error',
+			{
+				callbacksLast:        true,
+				ignoreCase:           false,
+				noSortAlphabetically: false,
+				requiredFirst:        true,
+				sortShapeProp:        true,
+			},
+		],
 		'react/state-in-constructor':                ['error', 'never'],
 		'react/static-property-placement':           ['error', 'static public field'],
 		'react/style-prop-object':                   'error',
@@ -940,9 +1060,9 @@ module.exports = {
 		'unicorn/no-process-exit':                   'error',
 		'unicorn/no-reduce':                         'off',
 		'unicorn/no-unreadable-array-destructuring': 'error',
-		'unicorn/no-unsafe-regex':                   'off', // Too many false positives
+		'unicorn/no-unsafe-regex':                   'warn',
 		'unicorn/no-unused-properties':              'error',
-		'unicorn/no-useless-undefined':              'off',
+		'unicorn/no-useless-undefined':              'warn',
 		'unicorn/no-zero-fractions':                 'error',
 		'unicorn/number-literal-case':               'error',
 		'unicorn/prefer-add-event-listener':         'error',
@@ -977,7 +1097,6 @@ module.exports = {
 		'wrap-regex':                                'error',
 		'yield-star-spacing':                        ['error', 'after'],
 		'yoda':                                      'error',
-
 	},
 	overrides: [
 		{
@@ -1014,23 +1133,25 @@ module.exports = {
 				browser: true,
 				node:    false,
 			},
-			plugins: [
-				'css-modules',
-			],
-			rules: {
+			plugins: ['css-modules'],
+			rules:   {
 				'css-modules/no-undef-class':  'error',
 				'css-modules/no-unused-class': 'warn',
-				'import/extensions':           ['error', 'always', {
-					'web.mjs': 'never',
-					'mjs':     'never',
-					'web.js':  'never',
-					'js':      'never',
-					'ts':      'never',
-					'tsx':     'never',
-					'json':    'never',
-					'web.jsx': 'never',
-					'jsx':     'never',
-				}],
+				'import/extensions':           [
+					'error',
+					'always',
+					{
+						'web.mjs': 'never',
+						'mjs':     'never',
+						'web.js':  'never',
+						'js':      'never',
+						'ts':      'never',
+						'tsx':     'never',
+						'json':    'never',
+						'web.jsx': 'never',
+						'jsx':     'never',
+					},
+				],
 				'import/no-nodejs-modules': 'error',
 			},
 		},
@@ -1056,20 +1177,26 @@ module.exports = {
 					},
 				},
 			},
-			env:   { node: true },
+			env: {
+				node: true,
+			},
 			rules: {
-				'import/extensions': ['error', 'always', {
-					'node.mjs': 'never',
-					'mjs':      'never',
-					'node.js':  'never',
-					'js':       'never',
-					'ts':       'never',
-					'tsx':      'never',
-					'json':     'never',
-					'node.jsx': 'never',
-					'jsx':      'never',
-					'node':     'never',
-				}],
+				'import/extensions': [
+					'error',
+					'always',
+					{
+						'node.mjs': 'never',
+						'mjs':      'never',
+						'node.js':  'never',
+						'js':       'never',
+						'ts':       'never',
+						'tsx':      'never',
+						'json':     'never',
+						'node.jsx': 'never',
+						'jsx':      'never',
+						'node':     'never',
+					},
+				],
 			},
 		},
 		{
@@ -1146,10 +1273,8 @@ module.exports = {
 				sourceType: 'module',
 				project:    ['./tsconfig.json'],
 			},
-			plugins: [
-				'@typescript-eslint',
-			],
-			rules: {
+			plugins: ['@typescript-eslint'],
+			rules:   {
 				'@typescript-eslint/adjacent-overload-signatures':           'error',
 				'@typescript-eslint/array-type':                             'error',
 				'@typescript-eslint/await-thenable':                         'error',
