@@ -435,7 +435,7 @@ module.exports = {
 		'no-constant-condition':     'error',
 		'no-constructor-return':     'error',
 		'no-continue':               'off',
-		'no-control-regex':          'off',
+		'no-control-regex':          'warn',
 		'no-debugger':               'error',
 		'no-delete-var':             'error',
 		'no-div-regex':              'error',
