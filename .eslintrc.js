@@ -1286,6 +1286,7 @@ module.exports = {
 				'@typescript-eslint/comma-spacing':                          commaSpacing,
 				'@typescript-eslint/consistent-type-assertions':             'error',
 				'@typescript-eslint/consistent-type-definitions':            'error',
+				'@typescript-eslint/consistent-type-imports':                'error',
 				'@typescript-eslint/default-param-last':                     'warn',
 				'@typescript-eslint/dot-notation':                           'error',
 				'@typescript-eslint/explicit-function-return-type':          'error',
@@ -1383,6 +1384,10 @@ module.exports = {
 				'dot-notation':                                              'off',
 				'func-call-spacing':                                         'off',
 				'getter-return':                                             'off', // ts(2378)
+				'import/default':                                            'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/named':                                              'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/namespace':                                          'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/no-named-as-default-member':                         'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
 				'indent':                                                    'off',
 				'init-declarations':                                         'off',
 				'jsx-a11y/anchor-is-valid':                                  'off',
