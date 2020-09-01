@@ -1393,6 +1393,7 @@ module.exports = {
 				'no-dupe-args':                                              'off', // ts(2300)
 				'no-dupe-class-members':                                     'off', // ts(2393) & ts(2300)
 				'no-dupe-keys':                                              'off', // ts(1117)
+				'no-duplicate-imports':                                      'off', // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
 				'no-empty-function':                                         'off',
 				'no-extra-parens':                                           'off',
 				'no-extra-semi':                                             'off',
