@@ -1286,6 +1286,7 @@ module.exports = {
 				'@typescript-eslint/comma-spacing':                          commaSpacing,
 				'@typescript-eslint/consistent-type-assertions':             'error',
 				'@typescript-eslint/consistent-type-definitions':            'error',
+				'@typescript-eslint/consistent-type-imports':                'error',
 				'@typescript-eslint/default-param-last':                     'warn',
 				'@typescript-eslint/dot-notation':                           'error',
 				'@typescript-eslint/explicit-function-return-type':          'error',
