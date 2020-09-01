@@ -1062,7 +1062,7 @@ module.exports = {
 		'unicorn/no-unreadable-array-destructuring': 'error',
 		'unicorn/no-unsafe-regex':                   'warn',
 		'unicorn/no-unused-properties':              'error',
-		'unicorn/no-useless-undefined':              'warn',
+		'unicorn/no-useless-undefined':              'off',
 		'unicorn/no-zero-fractions':                 'error',
 		'unicorn/number-literal-case':               'error',
 		'unicorn/prefer-add-event-listener':         'error',
