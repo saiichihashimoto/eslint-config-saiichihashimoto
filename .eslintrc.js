@@ -464,7 +464,7 @@ module.exports = {
 		'lodash-fp/prefer-flat-map':                 'error',
 		'lodash-fp/prefer-get':                      'warn',
 		'lodash-fp/prefer-identity':                 ['error', { arrowFunctions: false }],
-		'lodash-fp/preferred-alias':                 ['error', { overrides: [] }],
+		'lodash-fp/preferred-alias':                 ['error', { overrides: ['compose'] }],
 		'lodash-fp/use-fp':                          'error',
 		'max-classes-per-file':                      'off',
 		'max-depth':                                 'off',
