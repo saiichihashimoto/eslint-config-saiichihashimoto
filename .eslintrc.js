@@ -306,6 +306,10 @@ module.exports = {
 		'import/order':                      [
 			'error',
 			{
+				'newlines-between': 'always',
+				'alphabetize':      {
+					order: 'asc',
+				},
 				'groups': [
 					'builtin',
 					'external',
@@ -314,7 +318,6 @@ module.exports = {
 					'sibling',
 					'index',
 				],
-				'newlines-between': 'always',
 			},
 		],
 		'import/prefer-default-export': 'off',
