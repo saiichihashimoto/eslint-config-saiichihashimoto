@@ -151,7 +151,7 @@ module.exports = {
 		'block-scoped-var':       'error',
 		'block-spacing':          ['error', 'always'],
 		'brace-style':            braceStyle,
-		'camelcase':              ['warn', { properties: 'always' }],
+		'camelcase':              'off',
 		'capitalized-comments':   'off',
 		'class-methods-use-this': 'warn',
 		'comma-dangle':           [
