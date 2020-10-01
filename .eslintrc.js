@@ -1270,7 +1270,7 @@ module.exports = {
 				'@typescript-eslint/consistent-type-imports':                'error',
 				'@typescript-eslint/default-param-last':                     'warn',
 				'@typescript-eslint/dot-notation':                           'error',
-				'@typescript-eslint/explicit-function-return-type':          'error',
+				'@typescript-eslint/explicit-function-return-type':          'warn',
 				'@typescript-eslint/explicit-member-accessibility':          'error',
 				'@typescript-eslint/explicit-module-boundary-types':         'error',
 				'@typescript-eslint/func-call-spacing':                      funcCallSpacing,
