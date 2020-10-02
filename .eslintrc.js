@@ -1175,6 +1175,7 @@ module.exports = {
 		'template-tag-spacing':                      ['error', 'never'],
 		'unicode-bom':                               ['error', 'never'],
 		'unicorn/better-regex':                      'error',
+		'unicorn/import-style':                      'off',
 		'unicorn/catch-error-name':                  ['error', { name: 'err' }],
 		'unicorn/consistent-function-scoping':       'off',
 		'unicorn/custom-error-definition':           'error',
