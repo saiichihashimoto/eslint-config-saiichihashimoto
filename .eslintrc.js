@@ -1,7 +1,11 @@
 const confusingBrowserGlobals = require('confusing-browser-globals');
 
 const braceStyle = ['error', '1tbs', { allowSingleLine: true }];
-const commaSpacing = ['error', { after: true, before: false }];
+const commaSpacing = [
+	'error', {
+		after: true, before: false,
+	},
+];
 const funcCallSpacing = ['error', 'never'];
 const indent = [
 	'error',
@@ -38,7 +42,11 @@ const indent = [
 		outerIIFEBody: 1,
 	},
 ];
-const keywordSpacing = ['error', { after: true, before: true }];
+const keywordSpacing = [
+	'error', {
+		after: true, before: true,
+	},
+];
 const noEmptyFunction = ['error', { allow: ['arrowFunctions', 'methods'] }];
 const linesBetweenClassMembers = ['error', 'never'];
 const noExtraParens = [
@@ -52,28 +60,38 @@ const noExtraParens = [
 		returnAssign:                false,
 	},
 ];
-const noUnusedExpressions = ['error', { allowShortCircuit: false, allowTaggedTemplates: false, allowTernary: false }];
-const noUnusedVars = ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }];
-const noUseBeforeDefine = ['error', { functions: true, classes: true, variables: true }];
+const noUnusedExpressions = [
+	'error', {
+		allowShortCircuit: false, allowTaggedTemplates: false, allowTernary: false,
+	},
+];
+const noUnusedVars = [
+	'error', {
+		vars: 'all', args: 'after-used', ignoreRestSiblings: true,
+	},
+];
+const noUseBeforeDefine = [
+	'error', {
+		functions: true, classes: true, variables: true,
+	},
+];
 const quotes = ['error', 'single'];
 const semi = ['error', 'always'];
-const spaceBeforeFunctionParen = ['error', { anonymous: 'never', asyncArrow: 'always', named: 'never' }];
+const spaceBeforeFunctionParen = [
+	'error', {
+		anonymous: 'never', asyncArrow: 'always', named: 'never',
+	},
+];
 
 module.exports = {
 	env: {
 		es6:  true,
 		node: true,
 	},
-	globals: {
-		process: 'readonly',
-	},
+	globals:       { process: 'readonly' },
 	parser:        'babel-eslint',
-	parserOptions: {
-		ecmaFeatures: {
-			jsx: true,
-		},
-	},
-	plugins: [
+	parserOptions: { ecmaFeatures: { jsx: true } },
+	plugins:       [
 		'config-files',
 		'eslint-comments',
 		'fp',
@@ -95,9 +113,7 @@ module.exports = {
 		'plugin:you-dont-need-momentjs/recommended',
 	],
 	settings: {
-		'react': {
-			version: 'detect',
-		},
+		'react':             { version: 'detect' },
 		'import/extensions': [
 			'.node.mjs',
 			'.web.mjs',
@@ -139,14 +155,18 @@ module.exports = {
 		},
 	},
 	rules: {
-		'accessor-pairs':         'off',
-		'array-bracket-newline':  ['error', { multiline: true }],
-		'array-bracket-spacing':  ['error', 'never'],
-		'array-callback-return':  'error',
-		'array-element-newline':  ['error', 'consistent'],
-		'arrow-body-style':       ['error', 'as-needed', { requireReturnForObjectLiteral: false }],
-		'arrow-parens':           ['error', 'always'],
-		'arrow-spacing':          ['error', { before: true, after: true }],
+		'accessor-pairs':        'off',
+		'array-bracket-newline': ['error', { multiline: true }],
+		'array-bracket-spacing': ['error', 'never'],
+		'array-callback-return': 'error',
+		'array-element-newline': ['error', 'consistent'],
+		'arrow-body-style':      ['error', 'as-needed', { requireReturnForObjectLiteral: false }],
+		'arrow-parens':          ['error', 'always'],
+		'arrow-spacing':         [
+			'error', {
+				before: true, after: true,
+			},
+		],
 		'block-scoped-var':       'error',
 		'block-spacing':          ['error', 'always'],
 		'brace-style':            braceStyle,
@@ -212,19 +232,23 @@ module.exports = {
 		'func-style':                            ['error', 'declaration', { allowArrowFunctions: true }],
 		'function-call-argument-newline':        ['error', 'consistent'],
 		'function-paren-newline':                ['error', 'multiline-arguments'],
-		'generator-star-spacing':                ['error', { before: false, after: true }],
-		'getter-return':                         'off',
-		'grouped-accessor-pairs':                ['error', 'getBeforeSet'],
-		'guard-for-in':                          'off',
-		'id-denylist':                           'off',
-		'id-length':                             'off',
-		'id-match':                              'off',
-		'implicit-arrow-linebreak':              ['error', 'beside'],
-		'import/default':                        'error',
-		'import/dynamic-import-chunkname':       'off',
-		'import/export':                         'error',
-		'import/exports-last':                   'error',
-		'import/extensions':                     [
+		'generator-star-spacing':                [
+			'error', {
+				before: false, after: true,
+			},
+		],
+		'getter-return':                   'off',
+		'grouped-accessor-pairs':          ['error', 'getBeforeSet'],
+		'guard-for-in':                    'off',
+		'id-denylist':                     'off',
+		'id-length':                       'off',
+		'id-match':                        'off',
+		'implicit-arrow-linebreak':        ['error', 'beside'],
+		'import/default':                  'error',
+		'import/dynamic-import-chunkname': 'off',
+		'import/export':                   'error',
+		'import/exports-last':             'error',
+		'import/extensions':               [
 			'error',
 			'always',
 			{
@@ -306,10 +330,8 @@ module.exports = {
 			'error',
 			{
 				'newlines-between': 'always',
-				'alphabetize':      {
-					order: 'asc',
-				},
-				'groups': [
+				'alphabetize':      { order: 'asc' },
+				'groups':           [
 					'builtin',
 					'external',
 					'internal',
@@ -366,8 +388,12 @@ module.exports = {
 				labelComponents:   [],
 			},
 		],
-		'jsx-a11y/lang':                                          'error',
-		'jsx-a11y/media-has-caption':                             ['error', { audio: [], video: [], track: [] }],
+		'jsx-a11y/lang':              'error',
+		'jsx-a11y/media-has-caption': [
+			'error', {
+				audio: [], video: [], track: [],
+			},
+		],
 		'jsx-a11y/mouse-events-have-key-events':                  'error',
 		'jsx-a11y/no-access-key':                                 'error',
 		'jsx-a11y/no-autofocus':                                  'warn',
@@ -396,7 +422,11 @@ module.exports = {
 				ul:    ['listbox', 'menu', 'menubar', 'radiogroup', 'tablist', 'tree', 'treegrid'],
 			},
 		],
-		'jsx-a11y/no-noninteractive-tabindex':     ['error', { roles: ['tabpanel'], tags: [] }],
+		'jsx-a11y/no-noninteractive-tabindex': [
+			'error', {
+				roles: ['tabpanel'], tags: [],
+			},
+		],
 		'jsx-a11y/no-onchange':                    'warn',
 		'jsx-a11y/no-redundant-roles':             'error',
 		'jsx-a11y/no-static-element-interactions': [
@@ -544,18 +574,22 @@ module.exports = {
 		'no-multi-assign':               'error',
 		'no-multi-spaces':               ['error', { ignoreEOLComments: true }],
 		'no-multi-str':                  'error',
-		'no-multiple-empty-lines':       ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-		'no-negated-condition':          'off',
-		'no-nested-ternary':             'off',
-		'no-new':                        'error',
-		'no-new-func':                   'error',
-		'no-new-object':                 'error',
-		'no-new-symbol':                 'error',
-		'no-new-wrappers':               'error',
-		'no-obj-calls':                  'error',
-		'no-octal':                      'error',
-		'no-octal-escape':               'error',
-		'no-param-reassign':             [
+		'no-multiple-empty-lines':       [
+			'error', {
+				max: 1, maxBOF: 0, maxEOF: 0,
+			},
+		],
+		'no-negated-condition': 'off',
+		'no-nested-ternary':    'off',
+		'no-new':               'error',
+		'no-new-func':          'error',
+		'no-new-object':        'error',
+		'no-new-symbol':        'error',
+		'no-new-wrappers':      'error',
+		'no-obj-calls':         'error',
+		'no-octal':             'error',
+		'no-octal-escape':      'error',
+		'no-param-reassign':    [
 			'error',
 			{
 				props:                          true,
@@ -584,22 +618,48 @@ module.exports = {
 		'no-restricted-imports':      'off',
 		'no-restricted-properties':   [
 			'error',
-			{ object: 'arguments', property: 'callee', message: 'arguments.callee is deprecated' },
-			{ object: 'global', property: 'isFinite', message: 'Please use Number.isFinite instead' },
-			{ object: 'self', property: 'isFinite', message: 'Please use Number.isFinite instead' },
-			{ object: 'window', property: 'isFinite', message: 'Please use Number.isFinite instead' },
-			{ object: 'global', property: 'isNaN', message: 'Please use Number.isNaN instead' },
-			{ object: 'self', property: 'isNaN', message: 'Please use Number.isNaN instead' },
-			{ object: 'window', property: 'isNaN', message: 'Please use Number.isNaN instead' },
-			{ property: '__defineGetter__', message: 'Please use Object.defineProperty instead.' },
-			{ property: '__defineSetter__', message: 'Please use Object.defineProperty instead.' },
+			{
+				object: 'arguments', property: 'callee', message: 'arguments.callee is deprecated',
+			},
+			{
+				object: 'global', property: 'isFinite', message: 'Please use Number.isFinite instead',
+			},
+			{
+				object: 'self', property: 'isFinite', message: 'Please use Number.isFinite instead',
+			},
+			{
+				object: 'window', property: 'isFinite', message: 'Please use Number.isFinite instead',
+			},
+			{
+				object: 'global', property: 'isNaN', message: 'Please use Number.isNaN instead',
+			},
+			{
+				object: 'self', property: 'isNaN', message: 'Please use Number.isNaN instead',
+			},
+			{
+				object: 'window', property: 'isNaN', message: 'Please use Number.isNaN instead',
+			},
+			{
+				property: '__defineGetter__', message: 'Please use Object.defineProperty instead.',
+			},
+			{
+				property: '__defineSetter__', message: 'Please use Object.defineProperty instead.',
+			},
 		],
 		'no-restricted-syntax': [
 			'error',
-			{ selector: 'ForInStatement', message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.' },
-			{ selector: 'ForOfStatement', message: 'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.' },
-			{ selector: 'LabeledStatement', message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.' },
-			{ selector: 'WithStatement', message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.' },
+			{
+				selector: 'ForInStatement', message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+			},
+			{
+				selector: 'ForOfStatement', message: 'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
+			},
+			{
+				selector: 'LabeledStatement', message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+			},
+			{
+				selector: 'WithStatement', message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+			},
 		],
 		'no-return-assign':            ['error', 'always'],
 		'no-return-await':             'error',
@@ -617,11 +677,15 @@ module.exports = {
 		'no-ternary':                  'off',
 		'no-this-before-super':        'error',
 		'no-throw-literal':            'error',
-		'no-trailing-spaces':          ['error', { ignoreComments: false, skipBlankLines: false }],
-		'no-undef':                    'error',
-		'no-undef-init':               'error',
-		'no-undefined':                'off',
-		'no-underscore-dangle':        [
+		'no-trailing-spaces':          [
+			'error', {
+				ignoreComments: false, skipBlankLines: false,
+			},
+		],
+		'no-undef':             'error',
+		'no-undef-init':        'error',
+		'no-undefined':         'off',
+		'no-underscore-dangle': [
 			'error',
 			{
 				allow:                [],
@@ -694,18 +758,20 @@ module.exports = {
 		'node/process-exit-as-throw':                 'error',
 		'node/shebang':                               [
 			'error',
-			{
-				convertPath: { 'src/**/*': ['^src/(.+?)$', 'lib/$1'] },
-			},
+			{ convertPath: { 'src/**/*': ['^src/(.+?)$', 'lib/$1'] } },
 		],
 		'nonblock-statement-body-position': 'off',
 		'object-curly-newline':             [
 			'error',
 			{
 				ExportDeclaration: 'always',
-				ImportDeclaration: { multiline: true, consistent: true },
-				ObjectExpression:  { multiline: true, consistent: true },
-				ObjectPattern:     { multiline: true, consistent: true },
+				ImportDeclaration: 'never',
+				ObjectExpression:  {
+					multiline: true, minProperties: 2,
+				},
+				ObjectPattern: {
+					multiline: true, minProperties: 2,
+				},
 			},
 		],
 		'object-curly-spacing': [
@@ -735,40 +801,96 @@ module.exports = {
 		'padding-line-between-statements': [
 			'error',
 			// Padding After
-			{ blankLine: 'always', prev: 'cjs-import', next: '*' },
-			{ blankLine: 'always', prev: 'directive', next: '*' },
+			{
+				blankLine: 'always', prev: 'cjs-import', next: '*',
+			},
+			{
+				blankLine: 'always', prev: 'directive', next: '*',
+			},
 
 			// Padding Before
-			{ blankLine: 'always', prev: '*', next: 'break' },
-			{ blankLine: 'always', prev: '*', next: 'cjs-export' },
-			{ blankLine: 'always', prev: '*', next: 'continue' },
-			{ blankLine: 'always', prev: '*', next: 'export' },
-			{ blankLine: 'always', prev: '*', next: 'return' },
-			{ blankLine: 'always', prev: '*', next: 'throw' },
+			{
+				blankLine: 'always', prev: '*', next: 'break',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'cjs-export',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'continue',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'export',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'return',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'throw',
+			},
 
 			// Padding Around
-			{ blankLine: 'always', prev: 'class', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'class' },
-			{ blankLine: 'always', prev: 'do', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'do' },
-			{ blankLine: 'always', prev: 'for', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'for' },
-			{ blankLine: 'always', prev: 'function', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'function' },
-			{ blankLine: 'always', prev: 'iife', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'iife' },
-			{ blankLine: 'always', prev: 'switch', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'switch' },
-			{ blankLine: 'always', prev: 'try', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'try' },
-			{ blankLine: 'always', prev: 'while', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'while' },
+			{
+				blankLine: 'always', prev: 'class', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'class',
+			},
+			{
+				blankLine: 'always', prev: 'do', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'do',
+			},
+			{
+				blankLine: 'always', prev: 'for', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'for',
+			},
+			{
+				blankLine: 'always', prev: 'function', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'function',
+			},
+			{
+				blankLine: 'always', prev: 'iife', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'iife',
+			},
+			{
+				blankLine: 'always', prev: 'switch', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'switch',
+			},
+			{
+				blankLine: 'always', prev: 'try', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'try',
+			},
+			{
+				blankLine: 'always', prev: 'while', next: '*',
+			},
+			{
+				blankLine: 'always', prev: '*', next: 'while',
+			},
 
 			// Never
-			{ blankLine: 'never', prev: 'case', next: '*' },
-			{ blankLine: 'never', prev: '*', next: 'case' },
-			{ blankLine: 'never', prev: 'default', next: '*' },
-			{ blankLine: 'never', prev: '*', next: 'default' },
+			{
+				blankLine: 'never', prev: 'case', next: '*',
+			},
+			{
+				blankLine: 'never', prev: '*', next: 'case',
+			},
+			{
+				blankLine: 'never', prev: 'default', next: '*',
+			},
+			{
+				blankLine: 'never', prev: '*', next: 'default',
+			},
 		],
 		'prefer-arrow-callback': [
 			'error',
@@ -781,8 +903,12 @@ module.exports = {
 		'prefer-destructuring': [
 			'error',
 			{
-				VariableDeclarator:   { array: false, object: true },
-				AssignmentExpression: { array: false, object: false },
+				VariableDeclarator: {
+					array: false, object: true,
+				},
+				AssignmentExpression: {
+					array: false, object: false,
+				},
 			},
 			{ enforceForRenamedProperties: false },
 		],
@@ -835,20 +961,40 @@ module.exports = {
 		'react/jsx-child-element-spacing':    'off',
 		'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
 		'react/jsx-closing-tag-location':     'error',
-		'react/jsx-curly-brace-presence':     ['error', { props: 'never', children: 'never' }],
-		'react/jsx-curly-newline':            ['error', 'consistent'],
-		'react/jsx-curly-spacing':            ['error', { when: 'never', children: true }],
-		'react/jsx-equals-spacing':           ['error', 'never'],
-		'react/jsx-filename-extension':       'off',
-		'react/jsx-first-prop-new-line':      ['error', 'multiline'],
-		'react/jsx-fragments':                ['error', 'syntax'],
-		'react/jsx-handler-names':            ['off', { eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on' }],
-		'react/jsx-indent':                   ['error', 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
-		'react/jsx-indent-props':             ['error', 'tab'],
-		'react/jsx-key':                      'error',
-		'react/jsx-max-depth':                'off',
-		'react/jsx-max-props-per-line':       ['error', { maximum: 1, when: 'multiline' }],
-		'react/jsx-no-bind':                  [
+		'react/jsx-curly-brace-presence':     [
+			'error', {
+				props: 'never', children: 'never',
+			},
+		],
+		'react/jsx-curly-newline': ['error', 'consistent'],
+		'react/jsx-curly-spacing': [
+			'error', {
+				when: 'never', children: true,
+			},
+		],
+		'react/jsx-equals-spacing':      ['error', 'never'],
+		'react/jsx-filename-extension':  'off',
+		'react/jsx-first-prop-new-line': ['error', 'multiline'],
+		'react/jsx-fragments':           ['error', 'syntax'],
+		'react/jsx-handler-names':       [
+			'off', {
+				eventHandlerPrefix: 'handle', eventHandlerPropPrefix: 'on',
+			},
+		],
+		'react/jsx-indent': [
+			'error', 'tab', {
+				checkAttributes: true, indentLogicalExpressions: true,
+			},
+		],
+		'react/jsx-indent-props':       ['error', 'tab'],
+		'react/jsx-key':                'error',
+		'react/jsx-max-depth':          'off',
+		'react/jsx-max-props-per-line': [
+			'error', {
+				maximum: 1, when: 'multiline',
+			},
+		],
+		'react/jsx-no-bind': [
 			'error',
 			{
 				allowArrowFunctions: true,
@@ -989,29 +1135,41 @@ module.exports = {
 				sortShapeProp:        true,
 			},
 		],
-		'react/state-in-constructor':                ['error', 'never'],
-		'react/static-property-placement':           ['error', 'static public field'],
-		'react/style-prop-object':                   'error',
-		'react/void-dom-elements-no-children':       'error',
-		'require-atomic-updates':                    'error',
-		'require-await':                             'error',
-		'require-unicode-regexp':                    'error',
-		'require-yield':                             'error',
-		'rest-spread-spacing':                       ['error', 'never'],
-		'semi':                                      semi,
-		'semi-spacing':                              ['error', { before: false, after: true }],
-		'semi-style':                                ['error', 'last'],
-		'sort-imports':                              'off',
-		'sort-keys':                                 'off',
-		'sort-vars':                                 'off',
-		'space-before-blocks':                       ['error', 'always'],
-		'space-before-function-paren':               spaceBeforeFunctionParen,
-		'space-in-parens':                           ['error', 'never'],
-		'space-infix-ops':                           'error',
-		'space-unary-ops':                           ['error', { nonwords: false, words: true }],
-		'spaced-comment':                            ['error', 'always', { block: { balanced: true } }],
-		'strict':                                    ['error', 'never'],
-		'switch-colon-spacing':                      ['error', { after: true, before: false }],
+		'react/state-in-constructor':          ['error', 'never'],
+		'react/static-property-placement':     ['error', 'static public field'],
+		'react/style-prop-object':             'error',
+		'react/void-dom-elements-no-children': 'error',
+		'require-atomic-updates':              'error',
+		'require-await':                       'error',
+		'require-unicode-regexp':              'error',
+		'require-yield':                       'error',
+		'rest-spread-spacing':                 ['error', 'never'],
+		'semi':                                semi,
+		'semi-spacing':                        [
+			'error', {
+				before: false, after: true,
+			},
+		],
+		'semi-style':                  ['error', 'last'],
+		'sort-imports':                'off',
+		'sort-keys':                   'off',
+		'sort-vars':                   'off',
+		'space-before-blocks':         ['error', 'always'],
+		'space-before-function-paren': spaceBeforeFunctionParen,
+		'space-in-parens':             ['error', 'never'],
+		'space-infix-ops':             'error',
+		'space-unary-ops':             [
+			'error', {
+				nonwords: false, words: true,
+			},
+		],
+		'spaced-comment':       ['error', 'always', { block: { balanced: true } }],
+		'strict':               ['error', 'never'],
+		'switch-colon-spacing': [
+			'error', {
+				after: true, before: false,
+			},
+		],
 		'symbol-description':                        'error',
 		'template-curly-spacing':                    ['error', 'never'],
 		'template-tag-spacing':                      ['error', 'never'],
@@ -1083,12 +1241,8 @@ module.exports = {
 	overrides: [
 		{
 			files: ['./*.js'],
-			env:   {
-				commonjs: true,
-			},
-			rules: {
-				'import/no-commonjs': 'off',
-			},
+			env:   { commonjs: true },
+			rules: { 'import/no-commonjs': 'off' },
 		},
 		{
 			files:    ['*.web.js'],
@@ -1159,9 +1313,7 @@ module.exports = {
 					},
 				},
 			},
-			env: {
-				node: true,
-			},
+			env:   { node: true },
 			rules: {
 				'import/extensions': [
 					'error',
@@ -1186,9 +1338,7 @@ module.exports = {
 				'*.spec.js',
 				'*.test.js',
 			],
-			env: {
-				jest: true,
-			},
+			env:     { jest: true },
 			plugins: [
 				'jest',
 				'jest-formatting',
@@ -1202,47 +1352,51 @@ module.exports = {
 				'jest-formatting/padding-around-describe-blocks':    'error',
 				'jest-formatting/padding-around-expect-groups':      'error',
 				'jest-formatting/padding-around-test-blocks':        'error',
-				'jest/consistent-test-it':                           ['error', { fn: 'it', withinDescribe: 'it' }],
-				'jest/expect-expect':                                'error',
-				'jest/lowercase-name':                               ['error', { ignore: ['describe'] }],
-				'jest/no-alias-methods':                             'error',
-				'jest/no-commented-out-tests':                       'error',
-				'jest/no-conditional-expect':                        'error',
-				'jest/no-deprecated-functions':                      'error',
-				'jest/no-disabled-tests':                            'error',
-				'jest/no-done-callback':                             'error',
-				'jest/no-duplicate-hooks':                           'error',
-				'jest/no-export':                                    'error',
-				'jest/no-focused-tests':                             'error',
-				'jest/no-hooks':                                     'off',
-				'jest/no-identical-title':                           'error',
-				'jest/no-if':                                        'warn',
-				'jest/no-interpolation-in-snapshots':                'error',
-				'jest/no-jasmine-globals':                           'error',
-				'jest/no-jest-import':                               'error',
-				'jest/no-large-snapshots':                           'off',
-				'jest/no-mocks-import':                              'error',
-				'jest/no-restricted-matchers':                       'off',
-				'jest/no-standalone-expect':                         'error',
-				'jest/no-test-prefixes':                             'error',
-				'jest/no-test-return-statement':                     'off',
-				'jest/prefer-called-with':                           'error',
-				'jest/prefer-expect-assertions':                     'off',
-				'jest/prefer-hooks-on-top':                          'error',
-				'jest/prefer-spy-on':                                'off',
-				'jest/prefer-strict-equal':                          'error',
-				'jest/prefer-to-be-null':                            'error',
-				'jest/prefer-to-be-undefined':                       'error',
-				'jest/prefer-to-contain':                            'error',
-				'jest/prefer-to-have-length':                        'error',
-				'jest/prefer-todo':                                  'error',
-				'jest/require-to-throw-message':                     'warn',
-				'jest/require-top-level-describe':                   'off',
-				'jest/valid-describe':                               'error',
-				'jest/valid-expect':                                 ['error', { alwaysAwait: true }],
-				'jest/valid-expect-in-promise':                      'error',
-				'jest/valid-title':                                  'error',
-				'no-global-assign':                                  'off',
+				'jest/consistent-test-it':                           [
+					'error', {
+						fn: 'it', withinDescribe: 'it',
+					},
+				],
+				'jest/expect-expect':                 'error',
+				'jest/lowercase-name':                ['error', { ignore: ['describe'] }],
+				'jest/no-alias-methods':              'error',
+				'jest/no-commented-out-tests':        'error',
+				'jest/no-conditional-expect':         'error',
+				'jest/no-deprecated-functions':       'error',
+				'jest/no-disabled-tests':             'error',
+				'jest/no-done-callback':              'error',
+				'jest/no-duplicate-hooks':            'error',
+				'jest/no-export':                     'error',
+				'jest/no-focused-tests':              'error',
+				'jest/no-hooks':                      'off',
+				'jest/no-identical-title':            'error',
+				'jest/no-if':                         'warn',
+				'jest/no-interpolation-in-snapshots': 'error',
+				'jest/no-jasmine-globals':            'error',
+				'jest/no-jest-import':                'error',
+				'jest/no-large-snapshots':            'off',
+				'jest/no-mocks-import':               'error',
+				'jest/no-restricted-matchers':        'off',
+				'jest/no-standalone-expect':          'error',
+				'jest/no-test-prefixes':              'error',
+				'jest/no-test-return-statement':      'off',
+				'jest/prefer-called-with':            'error',
+				'jest/prefer-expect-assertions':      'off',
+				'jest/prefer-hooks-on-top':           'error',
+				'jest/prefer-spy-on':                 'off',
+				'jest/prefer-strict-equal':           'error',
+				'jest/prefer-to-be-null':             'error',
+				'jest/prefer-to-be-undefined':        'error',
+				'jest/prefer-to-contain':             'error',
+				'jest/prefer-to-have-length':         'error',
+				'jest/prefer-todo':                   'error',
+				'jest/require-to-throw-message':      'warn',
+				'jest/require-top-level-describe':    'off',
+				'jest/valid-describe':                'error',
+				'jest/valid-expect':                  ['error', { alwaysAwait: true }],
+				'jest/valid-expect-in-promise':       'error',
+				'jest/valid-title':                   'error',
+				'no-global-assign':                   'off',
 			},
 		},
 		{
@@ -1271,7 +1425,7 @@ module.exports = {
 				'@typescript-eslint/consistent-type-imports':                'error',
 				'@typescript-eslint/default-param-last':                     'warn',
 				'@typescript-eslint/dot-notation':                           'error',
-				'@typescript-eslint/explicit-function-return-type':          'error',
+				'@typescript-eslint/explicit-function-return-type':          'warn',
 				'@typescript-eslint/explicit-member-accessibility':          'error',
 				'@typescript-eslint/explicit-module-boundary-types':         'error',
 				'@typescript-eslint/func-call-spacing':                      funcCallSpacing,
