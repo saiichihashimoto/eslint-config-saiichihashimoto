@@ -69,6 +69,7 @@ module.exports = {
 	parserOptions: { ecmaFeatures: { jsx: true } },
 	plugins:       [
 		'config-files',
+		'css-modules',
 		'eslint-comments',
 		'fp',
 		'import',
@@ -89,7 +90,7 @@ module.exports = {
 		'plugin:you-dont-need-momentjs/recommended',
 	],
 	settings: {
-		'react':             { version: 'detect' },
+		'css-modules':       { basePath: 'src' },
 		'import/extensions': [
 			'.node.mjs',
 			'.web.mjs',
@@ -129,6 +130,7 @@ module.exports = {
 				],
 			},
 		},
+		'react': { version: 'detect' },
 	},
 	rules: {
 		'accessor-pairs':         'off',
@@ -163,6 +165,8 @@ module.exports = {
 		'consistent-return':                     'off',
 		'consistent-this':                       'off',
 		'constructor-super':                     'error',
+		'css-modules/no-undef-class':            'error',
+		'css-modules/no-unused-class':           'warn',
 		'curly':                                 ['error', 'all'],
 		'default-case':                          'off',
 		'default-case-last':                     'error',
@@ -1099,11 +1103,8 @@ module.exports = {
 				browser: true,
 				node:    false,
 			},
-			plugins: ['css-modules'],
-			rules:   {
-				'css-modules/no-undef-class':  'error',
-				'css-modules/no-unused-class': 'warn',
-				'import/extensions':           [
+			rules: {
+				'import/extensions': [
 					'error',
 					'always',
 					{
