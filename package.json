@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "4.7.0",
-    "@typescript-eslint/parser": "4.8.0",
+    "@typescript-eslint/parser": "4.8.1",
     "babel-eslint": "10.1.0",
     "confusing-browser-globals": "1.0.9",
     "eslint": "7.13.0",
