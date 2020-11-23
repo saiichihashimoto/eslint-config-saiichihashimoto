@@ -504,6 +504,7 @@ module.exports = {
 		'no-new-object':                 'error',
 		'no-new-symbol':                 'error',
 		'no-new-wrappers':               'error',
+		'no-nonoctal-decimal-escape':    'error',
 		'no-obj-calls':                  'error',
 		'no-octal':                      'error',
 		'no-octal-escape':               'error',
