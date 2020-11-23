@@ -317,7 +317,6 @@ module.exports = {
 		'import/unambiguous':           'off',
 		'indent':                       indent,
 		'init-declarations':            'off',
-		'jsx-a11y/accessible-emoji':    'off',
 		'jsx-a11y/alt-text':            'warn',
 		'jsx-a11y/anchor-has-content':  ['warn', { components: ['Link'] }],
 		'jsx-a11y/anchor-is-valid':     [
