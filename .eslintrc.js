@@ -589,6 +589,7 @@ module.exports = {
 		'no-unreachable-loop':                        'error',
 		'no-unsafe-finally':                          'error',
 		'no-unsafe-negation':                         'error',
+		'no-unsafe-optional-chaining':                'error',
 		'no-unused-expressions':                      noUnusedExpressions,
 		'no-unused-labels':                           'error',
 		'no-unused-vars':                             noUnusedVars,
@@ -1340,6 +1341,7 @@ module.exports = {
 				'no-undef':                                                  'off', // ts(2304)
 				'no-unreachable':                                            'off', // ts(7027)
 				'no-unsafe-negation':                                        'off', // ts(2365) & ts(2360) & ts(2358)
+				'no-unsafe-optional-chaining':                               'off',
 				'no-unused-expressions':                                     'off',
 				'no-unused-vars':                                            'off',
 				'no-use-before-define':                                      'off',
