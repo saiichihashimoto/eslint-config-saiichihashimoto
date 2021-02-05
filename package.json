@@ -60,7 +60,7 @@
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-unicorn": "26.0.1",
-    "eslint-plugin-you-dont-need-lodash-underscore": "6.10.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "6.11.0",
     "eslint-plugin-you-dont-need-momentjs": "1.6.0"
   },
   "devDependencies": {
