@@ -957,7 +957,7 @@ module.exports = {
 			'error',
 			{
 				ExportDeclaration: 'always',
-				ImportDeclaration: { minProperties: 2 },
+				ImportDeclaration: 'never',
 				ObjectExpression:  { multiline: true },
 				ObjectPattern:     { multiline: true },
 			},
