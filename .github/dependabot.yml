@@ -13,3 +13,6 @@ updates:
     prefix: "fix"
     prefix-development: "chore"
     include: "scope"
+  ignore:
+    - dependency-name: "husky"
+      versions: ["5.x"]
