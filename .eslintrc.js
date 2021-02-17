@@ -104,12 +104,12 @@ module.exports = {
 		es6:  true,
 		node: true,
 	},
+	reportUnusedDisableDirectives: true,
 	globals:       { process: 'readonly' },
 	parser:        'babel-eslint',
 	parserOptions: { ecmaFeatures: { jsx: true } },
 	plugins:       [
 		'config-files',
-		'css-modules',
 		'eslint-comments',
 		'fp',
 		'import',
@@ -127,7 +127,6 @@ module.exports = {
 	],
 	extends:  ['plugin:you-dont-need-lodash-underscore/all', 'plugin:you-dont-need-momentjs/recommended'],
 	settings: {
-		'css-modules':       { basePath: 'src' },
 		'import/extensions': [
 			'.node.mjs',
 			'.web.mjs',
@@ -214,8 +213,6 @@ module.exports = {
 		'consistent-return':                     'off',
 		'consistent-this':                       'off',
 		'constructor-super':                     'error',
-		'css-modules/no-undef-class':            'error',
-		'css-modules/no-unused-class':           'warn',
 		'curly':                                 ['error', 'all'],
 		'default-case':                          'off',
 		'default-case-last':                     'error',
