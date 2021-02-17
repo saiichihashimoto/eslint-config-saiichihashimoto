@@ -104,6 +104,7 @@ module.exports = {
 		es6:  true,
 		node: true,
 	},
+	reportUnusedDisableDirectives: true,
 	globals:       { process: 'readonly' },
 	parser:        'babel-eslint',
 	parserOptions: { ecmaFeatures: { jsx: true } },
