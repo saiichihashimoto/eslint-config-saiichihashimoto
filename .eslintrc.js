@@ -104,7 +104,6 @@ module.exports = {
 		es6:  true,
 		node: true,
 	},
-	reportUnusedDisableDirectives: true,
 	globals:       { process: 'readonly' },
 	parser:        'babel-eslint',
 	parserOptions: { ecmaFeatures: { jsx: true } },
@@ -1151,7 +1150,7 @@ module.exports = {
 		'react/prefer-stateless-function':            'error',
 		'react/prop-types':                           'off',
 		'react/react-in-jsx-scope':                   'error',
-		'react/require-default-props':                ['error', { forbidDefaultForRequired: true }],
+		'react/require-default-props':                'off',
 		'react/require-optimization':                 'off',
 		'react/require-render-return':                'error',
 		'react/self-closing-comp':                    'error',
@@ -1571,84 +1570,91 @@ module.exports = {
 				'@typescript-eslint/prefer-includes':                        'error',
 				'@typescript-eslint/prefer-literal-enum-member':             'error',
 				'@typescript-eslint/prefer-namespace-keyword':               'error',
-				'@typescript-eslint/prefer-nullish-coalescing':              'error',
-				'@typescript-eslint/prefer-optional-chain':                  'error',
-				'@typescript-eslint/prefer-readonly':                        'error',
-				'@typescript-eslint/prefer-readonly-parameter-types':        'off',
-				'@typescript-eslint/prefer-reduce-type-parameter':           'error',
-				'@typescript-eslint/prefer-regexp-exec':                     'error',
-				'@typescript-eslint/prefer-string-starts-ends-with':         'error',
-				'@typescript-eslint/prefer-ts-expect-error':                 'error',
-				'@typescript-eslint/promise-function-async':                 'error',
-				'@typescript-eslint/quotes':                                 quotes,
-				'@typescript-eslint/require-array-sort-compare':             'error',
-				'@typescript-eslint/require-await':                          'error',
-				'@typescript-eslint/restrict-plus-operands':                 'error',
-				'@typescript-eslint/restrict-template-expressions':          'error',
-				'@typescript-eslint/return-await':                           'error',
-				'@typescript-eslint/semi':                                   semi,
-				'@typescript-eslint/space-before-function-paren':            spaceBeforeFunctionParen,
-				'@typescript-eslint/strict-boolean-expressions':             'off',
-				'@typescript-eslint/switch-exhaustiveness-check':            'error',
-				'@typescript-eslint/triple-slash-reference':                 'error',
-				'@typescript-eslint/type-annotation-spacing':                'error',
-				'@typescript-eslint/typedef':                                'off',
-				'@typescript-eslint/unbound-method':                         'error',
-				'@typescript-eslint/unified-signatures':                     'error',
-				'brace-style':                                               'off',
-				'comma-spacing':                                             'off',
-				'constructor-super':                                         'off', // ts(2335) & ts(2377)
-				'default-param-last':                                        'off',
-				'dot-notation':                                              'off',
-				'func-call-spacing':                                         'off',
-				'getter-return':                                             'off', // ts(2378)
-				'import/default':                                            'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
-				'import/named':                                              'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
-				'import/namespace':                                          'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
-				'import/no-named-as-default-member':                         'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
-				'indent':                                                    'off',
-				'init-declarations':                                         'off',
-				'jsx-a11y/anchor-is-valid':                                  'off',
-				'keyword-spacing':                                           'off',
-				'lines-between-class-members':                               'off',
-				'no-array-constructor':                                      'off',
-				'no-const-assign':                                           'off', // ts(2588)
-				'no-dupe-args':                                              'off', // ts(2300)
-				'no-dupe-class-members':                                     'off', // ts(2393) & ts(2300)
-				'no-dupe-keys':                                              'off', // ts(1117)
-				'no-duplicate-imports':                                      'off', // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
-				'no-empty-function':                                         'off',
-				'no-extra-parens':                                           'off',
-				'no-extra-semi':                                             'off',
-				'no-func-assign':                                            'off', // ts(2539)
-				'no-import-assign':                                          'off', // ts(2539) & ts(2540)
-				'no-invalid-this':                                           'off',
-				'no-loss-of-precision':                                      'off',
-				'no-magic-numbers':                                          'off',
-				'no-new-symbol':                                             'off', // ts(2588)
-				'no-obj-calls':                                              'off', // ts(2349)
-				'no-redeclare':                                              'off', // ts(2451)
-				'no-return-await':                                           'off',
-				'no-setter-return':                                          'off', // ts(2408)
-				'no-this-before-super':                                      'off', // ts(2376)
-				'no-undef':                                                  'off', // ts(2304)
-				'no-unreachable':                                            'off', // ts(7027)
-				'no-unsafe-negation':                                        'off', // ts(2365) & ts(2360) & ts(2358)
-				'no-unsafe-optional-chaining':                               'off',
-				'no-unused-expressions':                                     'off',
-				'no-unused-vars':                                            'off',
-				'no-use-before-define':                                      'off',
-				'no-useless-constructor':                                    'off',
-				'no-var':                                                    'error', // ts transpiles let/const to var, so no need for vars any more
-				'prefer-const':                                              'error', // ts provides better types with const
-				'prefer-rest-params':                                        'error', // ts provides better types with rest args over arguments
-				'prefer-spread':                                             'error', // ts transpiles spread to apply, so no need for manual apply
-				'quotes':                                                    'off',
-				'require-await':                                             'off',
-				'semi':                                                      'off',
-				'space-before-function-paren':                               'off',
-				'valid-typeof':                                              'off', // ts(2367)
+				'@typescript-eslint/prefer-nullish-coalescing':              [
+					'error',
+					{
+						ignoreConditionalTests:        true,
+						ignoreMixedLogicalExpressions: true,
+					},
+				],
+				'@typescript-eslint/prefer-optional-chain':           'error',
+				'@typescript-eslint/prefer-readonly':                 'error',
+				'@typescript-eslint/prefer-readonly-parameter-types': 'off',
+				'@typescript-eslint/prefer-reduce-type-parameter':    'error',
+				'@typescript-eslint/prefer-regexp-exec':              'error',
+				'@typescript-eslint/prefer-string-starts-ends-with':  'error',
+				'@typescript-eslint/prefer-ts-expect-error':          'error',
+				'@typescript-eslint/promise-function-async':          'error',
+				'@typescript-eslint/quotes':                          quotes,
+				'@typescript-eslint/require-array-sort-compare':      'error',
+				'@typescript-eslint/require-await':                   'error',
+				'@typescript-eslint/restrict-plus-operands':          'error',
+				'@typescript-eslint/restrict-template-expressions':   'error',
+				'@typescript-eslint/return-await':                    'error',
+				'@typescript-eslint/semi':                            semi,
+				'@typescript-eslint/space-before-function-paren':     spaceBeforeFunctionParen,
+				'@typescript-eslint/strict-boolean-expressions':      'off',
+				'@typescript-eslint/switch-exhaustiveness-check':     'error',
+				'@typescript-eslint/triple-slash-reference':          'error',
+				'@typescript-eslint/type-annotation-spacing':         'error',
+				'@typescript-eslint/typedef':                         'off',
+				'@typescript-eslint/unbound-method':                  'error',
+				'@typescript-eslint/unified-signatures':              'error',
+				'brace-style':                                        'off',
+				'comma-spacing':                                      'off',
+				'constructor-super':                                  'off', // ts(2335) & ts(2377)
+				'default-param-last':                                 'off',
+				'dot-notation':                                       'off',
+				'func-call-spacing':                                  'off',
+				'getter-return':                                      'off', // ts(2378)
+				'import/default':                                     'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/named':                                       'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/namespace':                                   'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'import/no-named-as-default-member':                  'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+				'indent':                                             'off',
+				'init-declarations':                                  'off',
+				'jsx-a11y/anchor-is-valid':                           'off',
+				'keyword-spacing':                                    'off',
+				'lines-between-class-members':                        'off',
+				'no-array-constructor':                               'off',
+				'no-const-assign':                                    'off', // ts(2588)
+				'no-dupe-args':                                       'off', // ts(2300)
+				'no-dupe-class-members':                              'off', // ts(2393) & ts(2300)
+				'no-dupe-keys':                                       'off', // ts(1117)
+				'no-duplicate-imports':                               'off', // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
+				'no-empty-function':                                  'off',
+				'no-extra-parens':                                    'off',
+				'no-extra-semi':                                      'off',
+				'no-func-assign':                                     'off', // ts(2539)
+				'no-import-assign':                                   'off', // ts(2539) & ts(2540)
+				'no-invalid-this':                                    'off',
+				'no-loss-of-precision':                               'off',
+				'no-magic-numbers':                                   'off',
+				'no-new-symbol':                                      'off', // ts(2588)
+				'no-obj-calls':                                       'off', // ts(2349)
+				'no-redeclare':                                       'off', // ts(2451)
+				'no-return-await':                                    'off',
+				'no-setter-return':                                   'off', // ts(2408)
+				'no-this-before-super':                               'off', // ts(2376)
+				'no-undef':                                           'off', // ts(2304)
+				'no-unreachable':                                     'off', // ts(7027)
+				'no-unsafe-negation':                                 'off', // ts(2365) & ts(2360) & ts(2358)
+				'no-unsafe-optional-chaining':                        'off',
+				'no-unused-expressions':                              'off',
+				'no-unused-vars':                                     'off',
+				'no-use-before-define':                               'off',
+				'no-useless-constructor':                             'off',
+				'no-var':                                             'error', // ts transpiles let/const to var, so no need for vars any more
+				'prefer-const':                                       'error', // ts provides better types with const
+				'prefer-rest-params':                                 'error', // ts provides better types with rest args over arguments
+				'prefer-spread':                                      'error', // ts transpiles spread to apply, so no need for manual apply
+				'quotes':                                             'off',
+				'require-await':                                      'off',
+				'semi':                                               'off',
+				'space-before-function-paren':                        'off',
+				'valid-typeof':                                       'off', // ts(2367)
 			},
 		},
 	],
+	reportUnusedDisableDirectives: true,
 };
