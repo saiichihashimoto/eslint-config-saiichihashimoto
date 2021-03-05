@@ -100,9 +100,10 @@ const spaceBeforeFunctionParen = [
 ];
 
 const noMagicNumbers = {
-	detectObjects:      true,
-	ignore:             [0, 1],
-	ignoreArrayIndexes: true,
+	detectObjects:       true,
+	ignore:              [0, 1],
+	ignoreArrayIndexes:  true,
+	ignoreDefaultValues: true,
 };
 
 module.exports = {
