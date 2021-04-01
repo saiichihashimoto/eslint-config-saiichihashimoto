@@ -15,4 +15,4 @@ updates:
     include: "scope"
   ignore:
     - dependency-name: "husky"
-      versions: ["5.x"]
+      versions: ["5.x", "6.x"]
