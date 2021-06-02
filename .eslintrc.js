@@ -333,7 +333,7 @@ module.exports = {
 				optionalDependencies: false,
 			},
 		],
-		'import/no-import-module-exports':   'error',
+		'import/no-import-module-exports':   'off',
 		'import/no-internal-modules':        'off',
 		'import/no-mutable-exports':         'error',
 		'import/no-named-as-default':        'error',
