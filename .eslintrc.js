@@ -1489,7 +1489,7 @@ module.exports = {
 				'@typescript-eslint/await-thenable':                         'error',
 				'@typescript-eslint/ban-ts-comment':                         'error',
 				'@typescript-eslint/ban-tslint-comment':                     'error',
-				'@typescript-eslint/ban-types':                              'error',
+				'@typescript-eslint/ban-types':                              ['error', { types: { object: false } }],
 				'@typescript-eslint/brace-style':                            braceStyle,
 				'@typescript-eslint/class-literal-property-style':           'error',
 				'@typescript-eslint/comma-spacing':                          commaSpacing,
