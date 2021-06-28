@@ -269,7 +269,7 @@ module.exports = {
 		'import/default':                  'error',
 		'import/dynamic-import-chunkname': 'off',
 		'import/export':                   'error',
-		'import/exports-last':             'error',
+		'import/exports-last':             'off',
 		'import/extensions':               [
 			'error',
 			'always',
