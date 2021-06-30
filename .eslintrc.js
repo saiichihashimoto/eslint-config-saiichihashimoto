@@ -120,9 +120,7 @@ module.exports = {
 		'react',
 		'react-hooks',
 		'unicorn',
-		'you-dont-need-momentjs',
 	],
-	extends:  ['plugin:you-dont-need-momentjs/recommended'],
 	settings: {
 		'import/extensions': [
 			'.node.mjs',

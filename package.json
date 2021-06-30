@@ -57,8 +57,7 @@
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-unicorn": "28.0.2",
-    "eslint-plugin-you-dont-need-momentjs": "1.6.0"
+    "eslint-plugin-unicorn": "28.0.2"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
